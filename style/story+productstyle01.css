@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.img-01 img{
+    width: 335px;
+    height: 556px;
+    border-radius: 5px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.con-01{
+    width: 315px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.para-01 p{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.btn-01 button{
+    width: 120px;
+    height: 40px;
+    background: #004CFF;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.circle-01{
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: #CCD9F9;
+    margin: 5px;
+    border-radius: 50%;
+
+}
+
+.circle-02{
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: #004CFF;
+    margin-left: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.circle-03{
+    width: 30px;
+    height: 10px;
+    border: none;
+    background: #CCD9F9;
+    margin-right: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+

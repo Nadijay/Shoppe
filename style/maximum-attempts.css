@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color:  #88A6EE; 
+    
+}
+
+/* /.container{
+    width: 1440px;
+    height: 740px;
+    background-color:  #88A6EE;
+
+}   */
+
+.container{
+    width: 1440px;
+    height: 740px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #F8F8F8;  */
+}
+
+.cont-1{
+    width: 347px;
+    height: 243px;
+    /* margin-top: 239px;
+    margin-left: 383px; */
+    /* background-color: #F8F8F8; */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle{
+    width: 80px;
+    height: 80px;
+    margin-left: 134px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 8px 0px #00000029;
+    position: absolute;
+    z-index: 2;
+}
+
+.cir-1{
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 50%;
+    background: #FFEBEB;
+}
+
+.cir-2{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    left: 12px;
+    top: 12px;
+    border-radius: 50%;
+    background: #F1AEAE;
+    border: 2px solid #FFFFFF;
+    
+}
+
+.cir-2 p{
+    font-size: 13px;
+    color: #FFFFFF; 
+    position: absolute;
+    background: #F1AEAE;
+    top: 4px;
+    left: 9px;
+}
+.rectangle{
+    width: 347px;
+    height: 225px;
+    position: relative;
+    top: 38px;
+    gap: 0px;
+    opacity: 0px;
+    background: #F8F8F8;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.para{
+    width: 230px;
+    height: 73px;
+    position: relative;
+    top: 60px;
+    margin-left: 59px;
+    background-color: yellow;
+
+}
+
+.para p{
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -0.18000000715255737px;
+    text-align: center;
+    color: #202020;
+    background: #F8F8F8;
+
+}
+
+.btn{
+    width: 201px;
+    height: 50px;
+    top: 155px;
+    margin-left: 73px;
+    background: #202020;
+    position: absolute;
+    border-radius: 15px;
+
+}
+
+.btn button{
+    width: 201px;
+    height: 50px;
+    background-color: #202020;
+    border-radius: 15px;
+    border: none;
+}
+
+.btn button p{
+    font-family: "Nunito Sans";
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 31px;
+    text-align: center;
+    color: #F3F3F3;
+    background-color: #202020;
+}
+
+
+@media only screen and (max-width: 1200px) {
+   
+    .container{
+        width: 1200px;
+        height: 740px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #cb8f8f;  */
+    }
+
+    .cont-1{
+        width: 347px;
+        height: 263px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .container{
+        width: 1050px;
+        height: 740px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #1a58b5;  */
+    }
+
+    .cont-1{
+        width: 347px;
+        height: 263px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    .container{
+        width: 750px;
+        height: 740px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #c5cb8f;  */
+    }
+
+    .cont-1{
+        width: 347px;
+        height: 263px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    .container{
+        width: 450px;
+        height: 667px;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        /* background-color: #8fcbb4;  */
+    }
+
+    .cont-1{
+        width: 327px;
+        height: 263px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container{
+        width: 375px;
+        height: 740px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #cb8fcb;  */
+    }
+
+    .cont-1{
+        width: 327px;
+        height: 263px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --mainFont:"Raleway", sans-serif;
+}
+*{
+    margin:0;
+    padding:0;
+}
+
+.profile{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+
+.profile-1 h2{
+    text-align:center;
+    font-family: var(--mainFont);
+}
+
+.heart{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    border:1px solid #004CFF;
+    color: #004CFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    position:relative;
+}
+
+.ri-verified-badge-fill{
+    position: absolute;
+    top:-8px;
+    right:0
+}
+
+.my-orders-0{
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.my-orders-0 h3{
+    margin:40px 0 20px 60px;
+}
+
+.my-orders{
+    display: flex;
+    margin-left: 60px;
+}
+
+.btn{
+    margin: 20px;
+    position: relative;
+}
+
+.my-orders button{
+    width: 400px;
+    height: 35px;
+    background-color: #E5EBFC;
+    color:#0042E0;
+    border: none;
+    border-radius: 20px;
+}
+
+.voucher{
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:20px;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.voucher-1{
+    width:519.1px;
+    height:200px;
+    border:2px solid #004CFF;
+    border-radius: 15px;
+    position:relative;
+    font-family: var(--mainFont);
+}
+
+.voucher-0{
+    width:519.1px;
+    height:200px;
+    border:2px solid #F2B8B8;
+    border-radius: 15px;
+    position:relative;
+    font-family: var(--mainFont);
+}
+
+.voucher-1:first-child{
+    margin-right: 30px;
+}
+.voucher-1 h2{
+    color:#004CFF;
+    font-size:18px;
+    margin-left:30px;
+}
+.voucher-1-0{
+    display:flex;
+    align-items: center;
+    justify-content: right;
+}
+.voucher-1-1{
+    width: 154.49px;
+    height:38px;
+    background-color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 5px 0 0;
+}
+
+hr{
+    border: 1px dashed #004CFF;
+}
+.hr{
+    border: 1px dashed #F2B8B8;
+}
+.v-d{
+    margin:50px;
+}
+
+.voucher-1 button{
+    width:122.05px;
+    height:52px;
+    border:none;
+    border-radius: 10px;
+    background-color: #004CFF;
+    color:white;
+    position:absolute;
+    right:8px;
+    bottom: 8px;
+}
+.voucher-0 button{
+    width:122.05px;
+    height:52px;
+    border:none;
+    border-radius: 10px;
+    background-color: #004CFF;
+    color:white;
+    position:absolute;
+    right:8px;
+    bottom: 8px;
+}
+
+.cr{
+    width:30.9px;
+    height:40px;
+    border-radius: 0px 20px 20px 0;
+    margin-left:20px;
+    border:2px solid #0042E0;
+    position:absolute;
+    left:-21px;
+    top:80px;
+}
+
+.cl{
+    width:30.9px;
+    height:40px;
+    border-radius: 20px 0 0 20px;
+    margin-left:20px;
+    border:2px solid #0042E0;
+    position:absolute;
+    right:-2px;
+    top:80px;
+}
+
+.cr1{
+    width:30.9px;
+    height:40px;
+    border-radius: 0px 20px 20px 0;
+    margin-left:20px;
+    border:2px solid #F2B8B8;
+    position:absolute;
+    left:-21px;
+    top:80px;
+}
+
+.cl1{
+    width:30.9px;
+    height:40px;
+    border-radius: 20px 0 0 20px;
+    margin-left:20px;
+    border:2px solid #F2B8B8;
+    position:absolute;
+    right:-2px;
+    top:80px;
+}
+
+
+@media(max-width:860px){
+    .announcement{
+        margin:0 10px 0 10px;
+        
+    }
+    .my-orders{
+        display: block;
+    }
+
+    .my-orders button{
+        width: 200px;
+    }
+
+    .voucher{
+        display:block;
+        margin-right:10px;
+    }
+
+    .voucher-1{
+        margin: 0 10px 20px 10px;
+    }
+
+    .voucher-0{
+        margin: 0 10px 20px 10px;
+    }
+
+    .voucher-1:last-child{
+        margin-right:20px;
+    }
+}

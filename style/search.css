@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.topic-01{
+    width: 100%;
+    margin-left:2%;
+    display: flex;
+    margin-top: 2%;
+}
+.topic-01 h1{
+    font-size: 28px;
+}
+
+.search-box{
+    width: 248px;
+    height: 36px;
+    border-radius: 18px;
+    background: #E5EBFC;
+    display: flex;
+    align-items: center;
+    margin-left:70%
+}
+
+.search-box p{
+    font-size: 16px;
+    color: #0042E0;
+    margin-left: 5%;
+}
+.search-box i{
+    color: #0042E0;
+    margin-left: 60%;
+}
+
+.tabs-01{
+    width: 60%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.reco p{
+    font-size: 18x;
+    margin-bottom: 10px;
+}
+
+.tabs-02{
+    display: flex;
+}
+.reco-01{
+    width: 173px;
+    height: 46px;
+    background: #F9F9F9;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.reco-02{
+    width: 338px;
+    height: 46px;
+    background: #F9F9F9;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.reco-03{
+    width: 357px;
+    height: 46px;
+    background: #F9F9F9;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.tabs-03{
+    display: flex;
+}
+.reco-04{
+    width: 173px;
+    height: 46px;
+    background: #F9F9F9;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.reco-05{
+    width: 173px;
+    height: 46px;
+    background: #F9F9F9;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.dis h3{
+    margin-left: 2%;
+    margin-top: 3%;
+    font-size: 21px;
+}
+.con-01{
+    display: flex;
+}
+.pic-01{
+    width: 23%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+.pic-01 img{
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    margin-left: 20%;
+}
+
+.pic-01 p{
+    font-size:16px;
+    margin-top:2%;
+    margin-left:2%;
+}
+
+.pic-01 h4{
+    font-size:21px;
+    margin-top:2%;
+    margin-left:2%;
+}
+
+.sec-02{
+    width:335px;
+    height:306;
+    position: absolute;
+    margin-top: 10px;
+    margin-left:70%;
+}

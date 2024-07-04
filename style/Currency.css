@@ -1,0 +1,136 @@
+body {
+    
+    margin: 0;
+    background-color: #464545; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	width: 1440px;
+height: 722px;
+top: 9730px;
+left: 7229px;
+gap: 0px;
+opacity: 0px;
+
+	
+}
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    top:5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 360px;
+	height:712px;
+    left:540px;
+    
+}
+.form-container h2{
+	text-align:center;
+	margin-top:150px;
+	font-family: Raleway;
+    font-size: 28px;
+    
+    line-height: 36px;
+    letter-spacing: -0.2800000011920929px;
+	color:#202020;
+	top:91px;
+	Left:665px;
+   
+    
+}
+.para1{
+	text-align:center;
+	font-family:Raleway ;
+	Left:665px;
+	Top:136px;
+	font:16px;
+	
+}
+
+.form-group {
+    margin-bottom: 10px;
+    text-align: center;
+    
+    
+}
+.form-group input[type="text"]  {
+            width: 335px;
+            
+            border: 0px solid #F9F9F9;
+            border-radius: 10px;
+			background-color: #F9F9F9;
+			margin:1px auto;
+			height:40px;
+			
+			
+}
+
+.circle-button1 {
+	        position: absolute;
+            width: 22px; /* Width and height should be equal */
+            height:22px;
+            background-color: #F1AEAE; /* Button color */
+            margin-left:300px;
+			top:260px;
+            border: 1px solid #ffffff; /* Remove default border */
+            border-radius: 50%; /* Make it circular */
+            display: flex; /* Center text horizontally and vertically */
+            align-items: center;
+            
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+            transition: background-color 0.3s; /* Optional: smooth transition on hover */
+        }
+		.circle-button2 {
+	        position: absolute;
+            width: 22px; /* Width and height should be equal */
+            height:22px;
+            background-color: #F1AEAE; /* Button color */
+            margin-left:300px;
+			top:310px;
+            border: 1px solid #ffffff; /* Remove default border */
+            border-radius: 50%; /* Make it circular */
+            display: flex; /* Center text horizontally and vertically */
+            align-items: center;
+            
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+            transition: background-color 0.3s; /* Optional: smooth transition on hover */
+        }
+		.circle-button3 {
+	        position: absolute;
+            width: 22px; /* Width and height should be equal */
+            height:22px;
+            background-color: #F1AEAE; /* Button color */
+            margin-left:300px;
+			top:365px;
+            border: 1px solid #ffffff; /* Remove default border */
+            border-radius: 50%; /* Make it circular */
+            display: flex; /* Center text horizontally and vertically */
+            align-items: center;
+            
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+            transition: background-color 0.3s; /* Optional: smooth transition on hover */
+        }
+		.circle-button4 {
+	        position: absolute;
+            width: 22px; /* Width and height should be equal */
+            height:22px;
+            background-color: #F1AEAE; /* Button color */
+            margin-left:300px;
+			top:420px;
+            border: 1px solid #ffffff; /* Remove default border */
+            border-radius: 50%; /* Make it circular */
+            
+			 display: flex; /* Center text horizontally and vertically */
+            align-items: center;
+            
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+            transition: background-color 0.3s; /* Optional: smooth transition on hover */
+        }
+		        .circle-button1:hover {
+            background-color: #2980b9; /* Change color on hover */
+        }

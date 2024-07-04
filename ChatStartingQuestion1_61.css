@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8faff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 360px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #f8faff;
+}
+
+.chat-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-title {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.chat-title h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.chat-title span {
+    font-size: 12px;
+    color: #666;
+}
+
+.chat-message {
+    padding: 16px;
+    background-color: #e5ebfc;
+    border-radius: 8px;
+    margin: 16px;
+}
+
+.chat-message p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.chat-issue h3 {
+    margin: 16px 0;
+    font-size: 18px;
+}
+
+.issue-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #004cff;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.option .tick-mark {
+    display: none;
+    position: absolute;
+    left: 10px;
+}
+
+.option.selected {
+    background-color: #004cff;
+    color: #ffffff;
+}
+
+.option.selected .tick-mark {
+    display: inline;
+    color: #ffffff;
+}
+
+.next-button {
+    background-color: #004cff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}

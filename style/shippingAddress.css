@@ -1,0 +1,138 @@
+body {
+    
+    margin: 0;
+    background-color: #464545; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	width: 1440px;
+height: 722px;
+top: 9730px;
+left: 7229px;
+gap: 0px;
+opacity: 0px;
+
+	
+}
+.form-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    top:5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 360px;
+	height:712px;
+    left:540px;
+    
+}
+
+h2 {
+	top:66px;
+	left:663px;
+    text-align: center;
+	Font:Raleway;
+	Size:28px;
+}
+.section{
+	
+	Font:Raleway;
+}
+.para{
+	Top:109px;
+    Left:650px;
+	text-align: center;
+	Size:16px;
+}
+.para2{
+	font-size:10px;
+	Font:Nunito Sans;
+	Size:13px;
+
+	
+}
+.para3{
+	font-size:20px;
+	Top:22px;
+	Font:Raleway;
+	
+}
+.arrow-button {
+    display: inline-flex;
+    align-items: center;
+    
+    background-color: #004CFF;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	margin-left:305px;
+	top:18px;
+	width:40px;
+	Height:40px;
+}
+
+.arrow-button:hover {
+    background-color: #005f7a;
+}
+
+.arrow-button::after {
+    content: '\2192'; /* Unicode for the right arrow */
+    margin-left: 10px;
+    font-size: 18px;
+    transition: margin-left 0.3s;
+}
+
+.arrow-button:hover::after {
+    margin-left: 15px;
+}
+
+
+.form-group {
+    margin-top: 20px;
+	
+}
+
+.form-group label {
+	Font:Nunito Sans;
+    Size:13px;
+	top:223px;
+	Left:552px;
+	margin:10px;
+
+    display: block;
+    
+	font-size:13px;
+}
+
+.form-group input[type="text"] {
+    width: 335px;
+	Height:37px;
+    
+    border: 1px solid #F1F4FE; /* Default border color */
+    border-radius: 10px;
+	background-color: #F1F4FE;
+}
+
+.form-group button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #004CFF;
+    color: white;
+    cursor: pointer;
+    width: 335px;
+	margin: 100px auto;
+	Height:40px;
+	Top:300px;
+	Left:552px;
+	Font:Nunito Sans;
+	Size:16px;
+	text-align:Center;
+	color:#F3F3F3;
+
+}
+.form-group button:hover{
+	background-color: black;
+}

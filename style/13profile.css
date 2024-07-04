@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.announcement{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.announcement h1,p{
+    padding: 20px;
+}
+
+.recently-viewed_01{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.recently-viewed-img-box img{
+     width: 160.45px;
+     height: 186.67px ;
+     border-radius: 50%;
+     margin : 18px;
+     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.3),0 8px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.my-orders_02{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.stories_03{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.stories-img-box{
+    padding: 2px;
+    width: 285px;
+    height: 516px;
+    margin : 30px;
+    border-radius: 20px;
+}
+
+.new-items_04{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.most-popular_05{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.categories_06{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.flash-sale_07{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.top-products_08{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.just-for-u_09{
+    margin-top: 30px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.new-items_04{
+    display: flex;
+
+    margin:2px 0;
+    position: relative;
+    overflow: hidden;
+    border:var(--border);
+    text-align: justify;
+}
+
+.new-items_04 .image{
+    padding:15px;
+    
+}
+
+.new-items_04 .image img{
+    height: 212px;
+    width: 180px;
+}
+
+
+
+.new-items_04 .content{
+    background:#eee;
+    padding:1.5px;
+}
+
+.new-items_04 .content h3{
+    font-size: 1px;
+    color:var(--black);
+}
+
+.new-items_04 .content .price{
+    font-size: 2.2px;
+    color:var(--black);
+    padding-top: 1px;
+}
+.heading{
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.new-items_04 .set-01{
+    background-color: aqua;
+    width: 192px;
+    height: 266px;
+}
+
+.new-items_04 .set-01 .img{
+    height: 195px;
+    width: 172px;
+}

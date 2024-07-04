@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --mainFont:"Raleway", sans-serif;
+}
+*{
+    margin:0;
+    padding:0;
+    font-family: var(--mainFont);
+}
+
+.content{
+    width:360px;
+    height:100vh;
+    /* background-color: aquamarine; */
+    margin: auto;
+    border: 1px solid black;
+}
+.content-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.content-1 h2{
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.content-1 h3{
+    font-size: 16px;
+    
+}
+
+.card{
+    width: 280px;
+    height: 155px;
+    background-color: #F1F4FE;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+.card-1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img{
+    width: 67.78px;
+    height: 41.89px;
+}
+
+.circle-3{
+    width: 28.13px;
+    height: 28.13px;
+    border-radius:50%;
+    background-color: #E5EBFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px 10px 0 0;
+    color:#004BFE;
+}
+
+.card-2{
+    font-size: 20px;
+    display:flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.card-2 p:last-child{
+    font-size: 12px;
+}
+
+.card-3{
+    font-size: 10px;
+    display:flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.item{
+    width: 335px;
+    height: 53px;
+    border-radius: 10px;
+    background-color: #F1F4FE;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.item h3{
+    margin-right: 15px;
+}
+
+.item-1{
+    display:flex;
+}
+.item-1-1 i{
+    font-size:20px;
+    color:#004CFF;
+    margin: 0 10px 0 10px;
+}
+
+.item-1-2 p{
+    font-size: 10px;
+}
+
+.item-1-2 h3{
+    font-size: 14px;
+}
+
+.content-3{
+    height: 220px;
+    overflow-y:scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+.content-3::-webkit-scrollbar {
+    display: none;
+}
+
+.circle{
+    width: 28.13px;
+    height: 28.13px;
+    border-radius:50%;
+    
+}
+.circle-0{
+    margin:10px 0 0 10px;
+    position: relative;
+}
+
+.circle-1{
+    background-color: #EB001B;
+    
+    
+}
+.circle-2{
+    background-color: #F79E1B;
+    position: absolute;
+    top: 0;
+    left: 16px;
+    opacity: 0.9;
+}

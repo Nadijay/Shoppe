@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="./style/ChaStartingQuestion1_61.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="" alt="Chat Bot">
+            </div>
+            <div class="chat-title">
+                <h2>Chat Bot</h2>
+                <span>Customer Care Service</span>
+            </div>
+        </div>
+        <div class="chat-message">
+            <p>Hello, Amanda! Welcome to Customer Care Service. We will be happy to help you. Please, provide us more details about your issue before we can start.</p>
+        </div>
+        <div class="chat-issue">
+            <h3>What's your issue?</h3>
+            <div class="issue-options">
+                <div class="option" onclick="selectOption(this)">
+                    <span class="tick-mark">✔</span>
+                    <span>Order Issues</span>
+                </div>
+                <div class="option" onclick="selectOption(this)">
+                    <span class="tick-mark">✔</span>
+                    <span>Item Quality</span>
+                </div>
+                <div class="option" onclick="selectOption(this)">
+                    <span class="tick-mark">✔</span>
+                    <span>Payment Issues</span>
+                </div>
+                <div class="option" onclick="selectOption(this)">
+                    <span class="tick-mark">✔</span>
+                    <span>Technical Assistance</span>
+                </div>
+                <div class="option" onclick="selectOption(this)">
+                    <span class="tick-mark">✔</span>
+                    <span>Other</span>
+                </div>
+            </div>
+            <button class="next-button">Next</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

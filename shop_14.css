@@ -1,0 +1,361 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navigation-bar {
+    background-color: #f8f8f8;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+.search-bar img {
+    width: 20px;
+    height: 20px;
+}
+
+.scrollable-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-image {
+    min-width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: width 0.3s ease, border-radius 0.3s ease;
+}
+
+.indicator:hover,
+.indicator.active {
+    width: 20px;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+.categories {
+    padding: 20px;
+}
+.categories .categories-header,
+.items-section .items-section-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.category {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.category h3 {
+    font-size: 1.2em;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-count {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.see-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.categories .categories-header .see-all,
+.items-section .items-section-header .see-all
+{
+    text-align: right;
+    margin-top: 10px;
+}
+.see-all button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top-products .product-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-products .product-list .product {
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.top-products .product-list .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.items-section {
+    padding: 20px;
+}
+
+.items-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.items-grid-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.items-grid {
+    display: flex;
+    gap: 10px;
+}
+
+.item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    flex: 1 1 calc(16.666% - 10px); /* to Ensures 6 items fit within the container */
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.flash-sale .flash-sale-header,
+.just-for-you .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flash-sale .countdown {
+    display: flex;
+    align-items: center;
+}
+
+.flash-sale .countdown img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.flash-sale .countdown .time {
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.flash-sale-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flash-sale-items .item {
+    position: relative;
+    width: calc(33.333% - 10px);
+    margin: 5px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.flash-sale-items .item img {
+    width: 100%;
+    display: block;
+}
+
+.flash-sale-items .sale-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.see-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.see-all button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top-products .product-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-products .product-list .product {
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.top-products .product-list .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.just-for-you .header {
+    display: flex;
+    align-items: center;
+}
+
+.just-for-you .header h2 {
+    margin: 0;
+}
+
+.just-for-you .header .star {
+    margin-left: 10px;
+    color: blue;
+}
+.product-list .product{
+    position: relative;
+    width: calc(50% - 10px);
+    margin: 5px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.just-for-you .product-list {
+    display: flex;
+   justify-content: space-between;
+}
+
+.just-for-you .product {
+    width: calc(25% - 10px);
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+.just-for-you .product img {
+    width: 100%;
+    display: block;
+}
+
+.just-for-you .product p {
+    margin: 10px 0;
+}
+
+.just-for-you .product .price {
+    font-weight: bold;
+}

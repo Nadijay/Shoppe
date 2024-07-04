@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./style/whishlist.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400&display=swap" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wishlist">
+    <header class="rectangle-parent">
+      <div class="frame-child"></div>
+      <div class="logo-wrapper">
+        <a class="logo">Logo</a>
+      </div>
+      <div class="frame-parent">
+        <div class="frame-wrapper">
+          <div class="frame-group">
+            <div class="shop-parent">
+              <i class="ri-home-4-line"></i>
+              <div class="home-wrapper">
+                <a class="home">Home</a>
+              </div>
+            </div>
+            <div class="frame-container">
+              <div class="wishlist-parent">
+                <i class="ri-heart-line"></i>
+
+                <a class="wishlist1" id="wishlistText">Wishlist</a>
+              </div>
+            </div>
+            <div class="frame-div">
+              <div class="categories-parent">
+                <i class="ri-file-list-2-line"></i>
+
+                <div class="categories-body">
+                  <a class="categories">Categories</a>
+                </div>
+              </div>
+            </div>
+            <div class="cart-parent">
+              <i class="ri-shopping-bag-3-line"></i>
+              <img class="cart-icon" loading="lazy" alt="" src="./public/cart.svg" />
+
+              <div class="cart-wrapper">
+                <a class="cart">Cart</a>
+              </div>
+            </div>
+            <div class="frame-parent1">
+              <i class="ri-user-3-line"></i>
+
+              <div class="profile-wrapper">
+                <a class="profile">Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent2">
+          <div class="frame-parent3">
+            <div class="wrapper-ellipse-parent">
+              <img class="image-icon" loading="lazy" alt=""
+                src="https://s3-alpha-sig.figma.com/img/129a/d63c/2ff835893de204612fbcffb88029dd75?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YxxunpMEUtZ5H1pUusgb2Y4zDaLf~HtZuQO88lgeR1Zp2jyNfpZfHXFO58AGFladX4q88Fb~AVfeVTmykR3J4HdOE4wGNiqw1XhdYRMkED6C5ml~LHj8tu9mboGcO5AFfWh96CYDuwOtzevSWYGpbiuiN2bcODRneAE5Lo-rZsFtet0p9D3qgEOoJzEV83vOg5NZKcIN6uGb8p-7QTYXoI7qTCu8iw~myuY7GPc2GfCHGQL4ExH8Engfeoi9g-rw0DXkowlZkc~ec7~pQ5RmvmJIZf6mgYQMtz7bJUyoomS9kROYxXGY21FVvrT-W6vQxop9aRLz7qXEHa8~V-g~XA__" />
+            </div>
+            <div class="my-activity-wrapper">
+              <button class="my-activity">
+                <div class="rectangle"></div>
+                <a class="title">My Activity</a>
+              </button>
+            </div>
+          </div>
+          <div class="frame-wrapper1">
+            <div class="frame-parent4">
+              <i class="ri-qr-scan-line"></i>
+              <i class="ri-align-justify"></i>
+              <i class="ri-settings-2-line"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="wishlist-inner">
+      <section class="frame-section">
+        <div class="frame-wrapper2">
+          <div class="frame-parent5">
+            <div class="title-parent">
+              <a class="title1">Wishlist</a>
+              <div class="title-group">
+                <h3 class="title2">Recently viewed</h3>
+                <input type="button" class="button-icon" value="&#xEA6B;">
+
+              </div>
+            </div>
+            <div class="wrapper-recently-view-parent">
+              <div class="wrapper-recently-view">
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/0a41/92cd/dfc715a39d328d71969353242251248e?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=miywIjdeksIT7FhM6snBhPoHb5PyewqLO5ncrsyaJ8Mi4fIA55fDTvEn~Fxqi1XvRefbFpFhJAo8Ks90YkWA4d6lUmU51fWvPAf6-uiucYtl88qBe6MuO7uDttsO2A3KHzQ17JVxYPAHDnVPcA7ba3-TEalLk1S-ddJBbCxCs0faqaXDvtGY3QNeytzlbOjrx7Y6ZC4xMLMFymqMppayDP0GlTz9jJbkV8gh-TIkXbgpvdAs2uikW96HnEKbbVJJWeV3JJeTJ5RV0unoawOyqVGEckGSKdFr9aCZG09zhsVOqd2pl9NRbYM5sWQjENfhOzkm8AIYa-WR3s60u0afLw__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/1839/4337/441be8ec93bb43d7fd373d79c6adeeec?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SaIAoO8q3yl6P4ZpNFl47RPSbAi17Y0TKOohxYGUTA9B8NUvrBIErvqpJRpJzqerfOmFHt6Po7aVmZqmTVR5dLUNg5ojLJVpj23bKYptNSbHEGdGK2snVnoKfQZwAmiZfbFOWsi8XrpQ4B-MLcheeKaJafmuyfaFu5NuvCDE~jvIc3VjqZdylXHT936O2Hm~2AbpbRpgO00vYSweROvvqvcsm4dHuYIxuedrFW2fq6glvPz2z~YLKuWjj6OcSUPLCMlR5JDbqJK4Rp1BoSaALO-K0K1HK05GM-NQPmkf8-3VgJ4risEy9QOcaZ1YYu6YkhSFThSapiliYQhDVvvyBg__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/a59f/a349/ac198655fc26bb826bb389c550d33d9f?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AUv~FSUrTaqDZgpbU1AxHLlZevy5gXBUotHP6WzdTB6ikmfkZrKbtmxgUrduSPt4zbh-8rSlwRf6SR0C064oM1rxW0aktskiELRWyvLbsLGtxWHCam2PdTUHZ6r~474wpASYs5Bb82kvHQvvk2nxUOjt1uf8G7wZ4G5t2lxPZ5K0-RfhATOT0SdEmgslUzyCecVqYzmT~XA1btbhayqd26N0Ejfbn2bq0aaJM99R5BPwJ-jddrgYUYLM1GYTyN2MImHMUUAttUyqyAaNvhCNFEoSaeiophqK7cYRMtmncHlmpo2bPQxMbBdlZVmMBof8JnNUEPr9HKirqG3i9Fop8Q__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/a83e/a946/c62c6f134effe41537b18c9db6256a82?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ehBWz~bjrfoBet82qi6fB9mH12jTM51fQtUeQulRIVwxpzDdF74bxnKN-RgGfEXBBqM4hwwIcShZ9efbm5Silwu4hFh2teo0VxXiIpBL-ZcPYFz4ILiKF8DB57yemLXX6CXPgJ35S~Spy~ZTxUgD4PToSOXIRHKqZLI3LnrpSn88PDSnUYbP5uamAldoNFMfUUP~E3Owrg9rGoeZrHYpAjqoDvx56A5CQ2P11HC96UgLT2es3vzE5YXrRDPYwLv-639qrTsSx1RzEs8m6g36tERsY3w4Q1z5lUUTOfibsJ7dIW2~KHCeEj6knTTEYLR8mFhxTS5011XGEDwZwBtiXg__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/2735/3930/e7d78f58d556c1e7db3b90c000655b32?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=X2S4KycwD97Zjl7~nhon8nJ7VIivSCmlgIwsFwNxFr9WRvZWkxCyZWnlq3~bPJL792MfEyKJoNOdg67h0inhE0xTf~EQ9~VP00pFDnsh7kdnlBJgu2HR2InxM4OkmYUtwqNSy8cmw62sS2Iwz4u1ASYHN~IdlsvmqB9DacZl9AmxsLxrXsgGEo3~Yo~aLaD4q4a1iK5cMtOyVNr7Z328QAkR3wBLDrvqyWi4q6gxZ~p5sOewhj2h7O7ujtROCOA22pYR2693YzXQ82x8unUwR9u9FTK8YG5z0H8n5FeSPRLlJIx-hCMEOrn5D5ObbR2CCo0ZjzV8aghA5QCdOejVtw__" />
+              </div>
+              <div class="wrapper-recently-view1">
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/0a41/92cd/dfc715a39d328d71969353242251248e?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=miywIjdeksIT7FhM6snBhPoHb5PyewqLO5ncrsyaJ8Mi4fIA55fDTvEn~Fxqi1XvRefbFpFhJAo8Ks90YkWA4d6lUmU51fWvPAf6-uiucYtl88qBe6MuO7uDttsO2A3KHzQ17JVxYPAHDnVPcA7ba3-TEalLk1S-ddJBbCxCs0faqaXDvtGY3QNeytzlbOjrx7Y6ZC4xMLMFymqMppayDP0GlTz9jJbkV8gh-TIkXbgpvdAs2uikW96HnEKbbVJJWeV3JJeTJ5RV0unoawOyqVGEckGSKdFr9aCZG09zhsVOqd2pl9NRbYM5sWQjENfhOzkm8AIYa-WR3s60u0afLw__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/1839/4337/441be8ec93bb43d7fd373d79c6adeeec?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SaIAoO8q3yl6P4ZpNFl47RPSbAi17Y0TKOohxYGUTA9B8NUvrBIErvqpJRpJzqerfOmFHt6Po7aVmZqmTVR5dLUNg5ojLJVpj23bKYptNSbHEGdGK2snVnoKfQZwAmiZfbFOWsi8XrpQ4B-MLcheeKaJafmuyfaFu5NuvCDE~jvIc3VjqZdylXHT936O2Hm~2AbpbRpgO00vYSweROvvqvcsm4dHuYIxuedrFW2fq6glvPz2z~YLKuWjj6OcSUPLCMlR5JDbqJK4Rp1BoSaALO-K0K1HK05GM-NQPmkf8-3VgJ4risEy9QOcaZ1YYu6YkhSFThSapiliYQhDVvvyBg__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/a59f/a349/ac198655fc26bb826bb389c550d33d9f?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AUv~FSUrTaqDZgpbU1AxHLlZevy5gXBUotHP6WzdTB6ikmfkZrKbtmxgUrduSPt4zbh-8rSlwRf6SR0C064oM1rxW0aktskiELRWyvLbsLGtxWHCam2PdTUHZ6r~474wpASYs5Bb82kvHQvvk2nxUOjt1uf8G7wZ4G5t2lxPZ5K0-RfhATOT0SdEmgslUzyCecVqYzmT~XA1btbhayqd26N0Ejfbn2bq0aaJM99R5BPwJ-jddrgYUYLM1GYTyN2MImHMUUAttUyqyAaNvhCNFEoSaeiophqK7cYRMtmncHlmpo2bPQxMbBdlZVmMBof8JnNUEPr9HKirqG3i9Fop8Q__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/a83e/a946/c62c6f134effe41537b18c9db6256a82?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ehBWz~bjrfoBet82qi6fB9mH12jTM51fQtUeQulRIVwxpzDdF74bxnKN-RgGfEXBBqM4hwwIcShZ9efbm5Silwu4hFh2teo0VxXiIpBL-ZcPYFz4ILiKF8DB57yemLXX6CXPgJ35S~Spy~ZTxUgD4PToSOXIRHKqZLI3LnrpSn88PDSnUYbP5uamAldoNFMfUUP~E3Owrg9rGoeZrHYpAjqoDvx56A5CQ2P11HC96UgLT2es3vzE5YXrRDPYwLv-639qrTsSx1RzEs8m6g36tERsY3w4Q1z5lUUTOfibsJ7dIW2~KHCeEj6knTTEYLR8mFhxTS5011XGEDwZwBtiXg__" />
+                <img class="recently-view-icon" loading="lazy" alt=""
+                  src="https://s3-alpha-sig.figma.com/img/2735/3930/e7d78f58d556c1e7db3b90c000655b32?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=X2S4KycwD97Zjl7~nhon8nJ7VIivSCmlgIwsFwNxFr9WRvZWkxCyZWnlq3~bPJL792MfEyKJoNOdg67h0inhE0xTf~EQ9~VP00pFDnsh7kdnlBJgu2HR2InxM4OkmYUtwqNSy8cmw62sS2Iwz4u1ASYHN~IdlsvmqB9DacZl9AmxsLxrXsgGEo3~Yo~aLaD4q4a1iK5cMtOyVNr7Z328QAkR3wBLDrvqyWi4q6gxZ~p5sOewhj2h7O7ujtROCOA22pYR2693YzXQ82x8unUwR9u9FTK8YG5z0H8n5FeSPRLlJIx-hCMEOrn5D5ObbR2CCo0ZjzV8aghA5QCdOejVtw__" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="frame-wrapper11">
+
+          <div class="frame-parent10">
+
+            <div class="frame-parent11">
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/64c4/5ae5/26b18942f408de7e98dfd58cb9a6e202?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wtflt4tCDHDWho0XvKWlbX8cYtBtjyHRzylOTm7~jK4gM35m2t5xHUstQ1wUOcQlf50KAiI2iRfB7hSvyevv2UbgzCMb4MWSNTdc5KbX3VU4EWL74MoZwjIL17Y09Xt0FXNam02XZtMJN3iItw8-CxpMwh4FwHJY90WZD2FeZ3JuhYKyfBZUNo3u7Gb2kXSb8pBWqTbzl5ghCbaKJCjnI4u~lnqbB7OKhJVnhoZcIbBZULAZAusvBOgT1Ti1hpTm4EFjHSQ~t6XuwCpx1i5Y6BAzYMRzACPvFHmcXLNrC1EZwgs3HJJYz2-Z0HD0qVtIUrNlFFO0dI0l-m0DqLMwDQ__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <i></i>
+              </div>
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=acadrY7vtyyx0GNf60LI0He4d11oB0pOzVLmuLaQAd-Onbm-tEbpi5TRJ-mhD2Tob-Q28HPkam4UXux~m-4rVvluvjXyS2qreiBPcbOc4GYeXTRnkOEV6JFwxwm4trNUKWiFb8pQUkhT6pwuJan0zT8rjdaJbOfmOBb56spcLuW5gNJO0KkDwdp33JddtPD2PhgwpwODEqqgKFg-FvJBvgIjMLbn6bHnPE0EAQOFQz-jiopVs8ES6-uzzPNacRIvFbRLVjLkoLmiOY08RCJI~ow2yNIMx4w~qsfJC6ssemZxPTBpaPWl2wfRQpKwWXiBvH3QixvUmzGmltmATnRsXQ__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <i class="ri-shopping-bag-3-line"></i>
+              </div>
+            </div>
+
+            <div class="frame-parent11">
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/2c80/6617/1ca1707228b3c5e1c8fbc46e253d9eb5?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=q4IoRdxH-7~oHX1P4jCkZyU7srW7km8hYf5oD~Xs0Jer73-Cm4dYe3FZIsHWWaK9WXqqSYU13rsFkzH92h8gonw~Lm3~GR3KWtsn8ljWyYcDc6rqTivrTl2-f5xRAR9fDzXTlJAhAQUegV~XwdLD57EEXyiUlA-PZ5Bns8aZj6YAJHtvOd-C06ZnjUusnwhXLvso~~reFy5v1Q5q6ZMVRW4H6U-1HqJAKB7q~gSsUYr4KzuJW7fxzyXDvL7FnV8QzcUqNUxy1~TUAF2jcJRUSWaEqWdrMacPiALRrwwmhusFHRSqABBBEzSH05HwC9Ay47YjZXkc4eWUSWOK-UcluQ__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img class="add-icon2" loading="lazy" alt="" src="./public/add-2.svg" />
+              </div>
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/4e98/1e1f/88e55c19ce1aa419a238dff4dd3d7ee9?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WifYbgZ23zO~tLR~jbk05oy9s5CWZ5bpzbDvuLYKflTHde14IOu9jwOhmVbuN35SU8YNNcaSAQHxMlUkFh2QsOdL7HsuT~KwbnVJVWc7JiQoKZjewNxDNQpM-a22llMWzTA0MFNGY3RvQxvj-bDdACC98EgJ9bAWVBUXUtFg28dzTgC-I0fieZPtRCY0ZSOUIdQ2tpyBGIjNA-hF0DuzECw4SOULSFTJIEEoOnY2njb3ZuRxKYWqz1zN094FVapdXl8I6gZPtXVRqBiS76JFtyzFTNHkiVu86AkQYG7hUK0G4eObh00w5z8mUUihUVTGTTlD8ewqkJkpPAito8v8-A__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <i class="ri-add-circle-line"></i>
+                <i class="ri-shopping-bag-3-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="frame-wrapper11">
+
+          <div class="frame-parent10">
+
+            <div class="frame-parent11">
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/5817/78ec/a7a1c9dc2ef1cb1bd0dcccee2d93b584?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FnIXfDDDcWfiaJiCM4P7yWpNJxmOMuoFBbP-~0v33hjyp0tbImfX3AEyur-rkGsZYMHDlm1h2xdN8C7gRxqhZTfCNu5IWp4ma1-gSPEIN~cIdJYiwvK8jy050lnQvi3VUQm9bwrg4o8JOU-MTZ3L-wtOh6-jjH82Evy~Gtd3AFOkp6PkYq~dt2cauxy2Qcmgt6VlDfXFVQyYuhadOkW3qC5W7bitg-fpeClZtxGMRQP8bThr0Jtn6ZFW5k8BNhvnqlDyIfdlJ~mvDLRBrnsez~fqJm0OH5Klz9p~C8IyTIa5ysccceEMhMTsXT~P2WlNYpc51-5QUJuz42YfNxeCBw__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img class="add-icon2" loading="lazy" alt="" src="./public/add-2.svg" />
+              </div>
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/902c/2ed6/848fbde49066a7244b1f4197b721c175?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IZxcF7AbxI4g2jk~yddDzz5qzp2cAWMsinWYfnjNq5Nui9HMVS8qm9f44kaRJbtzYJBbELEF0pquN6jqfoyXs17c-9KTEb58AMAgZENfFTxDoYJg5Nv9GCEY7fxf3Rokrmb6Sis4S7Gq714uNoAvvhHFmnxwFzCtqawUFByVH8nSUOSGgTgMNCOJFiRyIP1ExAFXuCW9~mXkU1O~QrzpMC~g5--eBg6REQssQF~7SlnyeqKwF4JJNfUv~FjpAYDZwRvXLlLsIUDyN-cDQksfll16tvYK3TfPOnmc0isC6qSCviwnf80Jl7mfxtwnvrzgCjzvzGm8TWZSKAp72cOCPw__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img class="add-icon2" loading="lazy" alt="" src="./public/add-2.svg" />
+              </div>
+            </div>
+
+            <div class="frame-parent11">
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/3a39/f1d1/d23c65e543db966efd9955c99cf0a27a?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PbnFw9QRHNBrcv9oGpUimCxyCEfNoEeirWEIZ3IlUa17UsB9TUIYR5KPh0P1gwTOKyZnlfBMJVwO~ActnBkU7PfQ2z4nVI~Q5XWipN2fv8BpGAtyJYqtO6cR2F6j6UNE5qlON2vR8iYElSq~G06HW~HC6ZjQUDWpVyLI72MTy-ZDN1dVW2UkYS~eC5yNkR9SqpCzT5yXa9t9CNK0AVqp5~V6ZhtjE5dv9JJ5RT4SwVP6UZTGJJxCOSczbZZafqFAPhEFd8wx-E4kFWAC-Np-~LT~HUZCMgEdE-oGpEq2M2L-5QNuoGQu5SxpwntLBaPTjRjFmIiFhnTX99Abvf3qGQ__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img class="add-icon2" loading="lazy" alt="" src="./public/add-2.svg" />
+              </div>
+
+              <div class="rectangle-parent1">
+                <div class="rectangle1"></div>
+                <div class="frame-wrapper12">
+                  <div class="placeholder-01-group">
+                    <img class="placeholder-01-icon" alt=""
+                      src="https://s3-alpha-sig.figma.com/img/337a/22ae/49b350434fc9e50a9abb7351559ff374?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nYeMNBUGQk7GX3I4hqcInzq04tPDtIF0LgB6zpWolv2PpfTTFelWCcllocH5FiRlHWWybY2dz6RKx1Vsnrxq6E4nRhLhXSaumdIDQr0QbjDvzCJC3Pxka7P2Y3eadNfayuXWh1LUXxTGsOJ-ETHAnkeJMNFxJSOOVl0xc-hwu8-p2jrD~18u~8rcORoC6OV~P24u0zykhggTYLLz76lu-4oUhDjEnP-d97Yg5jnnhn8j~3dPLBdfl5c6sXqAlQSDHhDllfaSEnTC6QpMDqHYx4jqivRzj4CIwPcvxCNG9KgMpDhJDT~Nc1U05FCN7wpLrk8Me01rYz8cdTl2Wimc~w__" />
+                    <img class="remove-placeholder-icon" loading="lazy" alt=""
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z'%3E%3C/path%3E%3C/svg%3E" />
+                  </div>
+                </div>
+                <div class="product-info-placeholder">
+                  <div class="description-placeholder">
+                    <div class="lorem-ipsum-dolor2">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </div>
+                    <div class="title-parent1">
+                      <b class="title10">$27,00</b>
+                      <div class="color-size-placeholder-wrapper">
+                        <div class="color-size-placeholder">
+                          <div class="color2">
+                            <div class="color-inner"></div>
+                            <div class="title11">Pink</div>
+                          </div>
+                          <div class="size2">
+                            <div class="size-inner"></div>
+                            <div class="title12">M</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img class="add-icon2" loading="lazy" alt="" src="./public/add-2.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <script>
+          var wishlistText = document.getElementById("wishlistText");
+          if (wishlistText) {
+            wishlistText.addEventListener("click", function (e) {
+              window.location.href = "wishlist.html";
+            });
+          }
+        </script>
+</body>
+
+</html>

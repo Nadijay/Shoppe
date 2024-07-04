@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-section, .tracking-bar-section, .tracking-number-section, .tracking-items-section {
+    margin-bottom: 20px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tracking-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
+
+.tracking-bar .circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #fff;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 3px 6px 0px #00000029;
+}
+
+.tracking-bar .circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #004CFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tracking-bar .line {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #004CFF 0.81%, #3030D2 79%, #FF003D 99.17%);
+    position: relative;
+    top: -10px;
+}
+
+.tracking-bar .line::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #FF003D;
+    border: 2px solid #fff;
+    box-shadow: 0px 3px 6px 0px #00000029;
+}
+
+.tracking-number-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tracking-number-section .copy-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tracking-items-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tracking-item {
+    width: 500px;
+    height: 95px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracking-item:nth-child(odd) {
+    margin-right: 20px;
+}
+
+.tracking-item .date {
+    background-color: #F8FAFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.tracking-item.failed .date {
+    background-color: #F63C3C;
+    color: #fff;
+}
+
+.tracking-item.failed .heading {
+    color: #0042E0;
+    background-color: #0042E0;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.tracking-item.failed .heading::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+}

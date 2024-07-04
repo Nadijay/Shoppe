@@ -1,0 +1,63 @@
+body {
+    
+    margin: 0;
+    background-color: #464545; /* Ash color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container {
+	
+    background-color: white;
+    Width:360px;
+	Height:712px;
+	Top:5px;
+	Left:540px;
+	
+}
+img{
+
+Top:100px;
+margin-Left:80px;
+Width:200px;
+Height:200px;
+}
+
+
+h2{
+    text-align: center;
+	Size:28px;
+	Font:Raleway;
+	top:250.76px;
+	Height:36px'
+
+
+	
+	
+}
+.para1 {
+    font-size:16px;
+	text-align: center;
+	font-family:nunito-sans;
+	top:302.76px;
+	line-height:27px;
+	
+	
+
+}
+.para2{
+	font-size:16px;
+	text-align: center;
+	margin:10px;
+	line-height:27px;
+	font-family:nunito-sans;
+}
+.para3{
+	font-size:17px;
+	text-align: center;
+	Font:Raleway;
+	color:#202020;
+	
+}

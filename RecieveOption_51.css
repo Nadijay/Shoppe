@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #A5BDF5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.review-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.review-title {
+    background-color: #F8FAFF;
+    margin: -20px -20px 20px -20px;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.review-box h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    background-color: #F8FAFF;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px solid #e7e9fc; 
+    padding: 5px; 
+    background-color: white; 
+    margin-right: 20px;
+}
+
+.item-details {
+    flex: 1;
+    text-align: left;
+}
+
+.item-details p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.item-details .date {
+    margin-top: 10px;
+    background-color: #E7E9FC;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.review-button {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.review-button:hover {
+    background-color: #007bff;
+    color: white;
+}

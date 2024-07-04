@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+
+body {
+    background-color: #a3c9f8;
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 478px;
+}
+
+.header {
+    background-color: #F8FAFF;
+    border-radius: 9px 9px 0px 0px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 390px;
+    height: 155px;
+    opacity: 0.9;
+}
+
+.card-info {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 56.23px;
+    height: 34.79px;
+}
+
+.mastercard-icon {
+    position: relative;
+    width: 56.23px;
+    height: 34.79px;
+}
+
+.circle-left, .circle-right {
+    position: absolute;
+    width: 34.79px;
+    height: 34.79px;
+    border-radius: 50%;
+}
+
+.circle-left {
+    background-color: #EB001B;
+    left: 0;
+}
+
+.circle-right {
+    background-color: #F79E1B;
+    right: 0;
+}
+
+.card-details {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 80px;
+    position: relative;
+}
+
+.card-number {
+    margin-top: 100px; 
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.37px;
+    letter-spacing: 7.068px;
+}
+
+.card-number .masked-digits {
+    display: inline-block;
+    margin-left: -70px;
+    margin-right: 130px;
+}
+
+.card-number .visible-digits {
+    display: inline-block;
+    
+    margin-right: 5px;
+}
+
+.card-name {
+    margin-top: 40px;
+    
+    bottom: 10px;
+    margin-left: -70px; 
+    color: #333;
+    font-size: 13px;
+}
+
+.card-expiry {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #333;
+    font-size: 13px;
+}
+
+.card-settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.settings-ellipse {
+    width: 49px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5EBFC;
+    border-radius: 25px;
+    opacity: 0.9;
+}
+
+.settings-ellipse img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.add-button {
+    width: 300px;
+    height: 30px;
+    background-color: #004CFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}

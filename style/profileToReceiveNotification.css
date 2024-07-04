@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --mainFont:"Raleway", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.profile{
+    height:300px ;
+    /* background-color: aqua; */
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.profile-img{
+    width: 160px;
+    height: 160px;
+    /* background-color: blueviolet; */
+    margin-left: 60px;
+}
+
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-details{
+    margin-left: 40px;
+    font-family: var(--mainFont);
+}
+
+.announcement{
+    width: 707px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: #F9F9F9;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+}
+.announcement h3{
+    margin-bottom: 10px;
+}
+
+.announcement button{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #004CFF;
+    color: white;
+}
+
+
+.recently-viewed{
+    margin-left:60px;
+    font-family: var(--mainFont);
+}
+
+.recently-viewed-items{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 60px;
+}
+
+.item img{
+    margin: 15px;
+    margin-top: 60px;
+}
+
+.item img{
+    width:88.66px;
+    height: 94.17px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.my-orders-0 h3{
+    margin:40px 0 20px 60px;
+    font-family: var(--mainFont);
+}
+
+.my-orders{
+    display: flex;
+    margin-left: 60px;
+}
+
+.btn{
+    margin: 20px;
+    position: relative;
+}
+
+.my-orders button{
+    width: 400px;
+    height: 35px;
+    background-color: #E5EBFC;
+    color:#0042E0;
+    border: none;
+    border-radius: 20px;
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #F63C3C;
+    position: absolute;
+    right: 15px;
+    top: -5px;
+}
+
+.stories{
+    margin:40px 40px 0 60px;
+}
+.stories h3{
+    margin-bottom: 40px;
+    font-family: var(--mainFont);
+}
+
+.items{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:10px; 
+}
+@media(max-width:860px){
+    .items{
+        grid-template-columns: auto auto;
+    }
+
+    .my-orders button{
+        width: 150px;
+    }
+
+    .announcement{
+        width: 307px;
+    }
+
+    .announcement button{
+        
+        right: 10px;
+        
+    }
+    
+}
+.items-1 img{
+    width: 317.51px;
+    height: 343px;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+
+.items-1 img:hover{
+    transform: scale(1.2);
+    transition: transform 0.4s;
+    
+}

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --mainFont:"Raleway", sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.wishlist{
+    display:flex;
+    justify-content:space-between;
+    margin:40px;
+}
+
+.wishlist-1 h3{
+    font-size:28px;
+    margin-bottom: 10px;
+    font-family: var(--mainFont);
+}
+
+.wishlist-1 p{
+    font-family: var(--mainFont);
+}
+
+.icon{
+    width:30px;
+    height:30px;
+    background-color: #004CFF;
+    border-radius: 50%;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.user{
+    display:flex;
+    flex-wrap:wrap;
+    margin:40px;
+}
+.user-1{
+    margin:15px;
+}
+.user-1 img{
+    width:89.55px;
+    height:83.33px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.crcl{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom:40px;
+}
+.circle{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    box-shadow:1px 1px 5px 8px rgba(0,0,0,0.2);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    color:blue;
+    font-size:30px;
+    position:relative;
+}
+
+.icn-1{
+    position:absolute;
+    top:30px;
+    left:145px;
+}
+
+.icn-2{
+    position:absolute;
+    bottom:30px;
+    left:145px;
+}
+
+.icn-3{
+    position:absolute;
+    top:120px;
+    left:30px;
+}
+
+.icn-4{
+    position:absolute;
+    top:120px;
+    right:30px;
+}
+.arrow{
+    display:flex;
+}
+
+.arrow p{
+    margin-right: 5px;
+    font-family: var(--mainFont);
+}
+
+.items{
+    display:flex;
+    flex-wrap:wrap;
+    margin:10px;
+}
+.items-1{
+    width:309.36px;
+    height:281.56px;
+    border-radius:20px;
+    box-shadow:1px 1px 5px 5px rgba(0,0,0,0.2);
+    margin:15px;
+}
+
+.img img{
+    width:277px;
+    height:207px;
+    border-radius:20px;
+    object-fit:cover;
+    margin:15px;
+}
+
+.details{
+    display:flex;
+    justify-content: space-between;
+    margin:10px 20px 20px 20px;
+}
+
+.details i{
+    color:blue;
+    font-size: 20px;
+}
+
+.details h4{
+    font-family: var(--mainFont);
+}
+
+.details p{
+    font-family: var(--mainFont);
+}

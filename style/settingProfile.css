@@ -1,0 +1,128 @@
+body {
+    
+    margin: 0;
+    background-color: #464545; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	width: 1440px;
+height: 722px;
+top: 9730px;
+left: 7229px;
+gap: 0px;
+opacity: 0px;
+
+	
+}
+.form-container {
+    background-color: #D9D9D9;
+    padding: 20px;
+    top:5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 360px;
+	height:712px;
+    left:540px;
+    
+}
+.form-container h2{
+	text-align:center;
+	margin-top:150px;
+	font-family: Raleway;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.2800000011920929px;
+	color:#202020;
+	top:81px;
+	Left:665px;
+   
+    
+}
+.para{
+	text-align:center;
+	font-family:Raleway ;
+	Left:665px;
+	Top:124px;
+	
+}
+.form-container img{
+	
+    
+	border-radius: 50%;
+    border: 3px solid green;
+	display: block;
+    margin: 10px auto; /* Center the image */
+    width: 92px;
+    height: 92px;
+top: 168px;
+left: 674px;
+
+            
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+    
+    
+}
+
+.form-group input {
+            border: 0px solid #ccc;
+            border-radius: 10px;
+			background-color: #F1F4FE;
+			font-size: 17px;
+            font-family: Raleway;
+			width: 335px;
+			opacity: 0px;
+			gap: 0px;
+			left: 552px;
+			padding: 10px 15px;
+			Size:17px;
+			Height:21px;
+			Left:20px;
+			Top:16px;
+
+
+
+}
+.form-group1{
+	
+top: 287px;
+height: 50px;
+
+
+}
+.form-group2{
+	
+top: 347px;
+height: 50px;
+
+}
+.form-group3{
+	
+top: 407px;
+height: 50px;
+
+}
+.form-group button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #004CFF;
+    color: white;
+    cursor: pointer;
+    width: 335px;
+	margin: 100px auto;
+	Height:40px;
+	Top:300px;
+	Left:552px;
+	Font:Nunito Sans;
+	Size:16px;
+	text-align:Center;
+	color:#F3F3F3;
+
+}
+.form-group button:hover{
+	background-color: black;
+}

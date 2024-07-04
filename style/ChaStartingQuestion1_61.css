@@ -1,0 +1,320 @@
+
+        .div {
+          display: flex;
+          max-width: 362px;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 2px;
+        }
+        .div-2 {
+          background-color: #88a6ee;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+        }
+        .div-3 {
+          background-color: #fff;
+          display: flex;
+          gap: 8px;
+          padding: 17px 80px 17px 20px;
+        }
+        .div-4 {
+          disply: flex;
+          flex-direction: column;
+          fill: #fff;
+          stroke-width: 4px;
+          stroke: #fff;
+          filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.16));
+          overflow: hidden;
+          border-color: rgba(255, 255, 255, 1);
+          border-style: solid;
+          border-width: 4px;
+          position: relative;
+          display: flex;
+          aspect-ratio: 1.07;
+          width: 43px;
+          align-items: center;
+          justify-content: center;
+        }
+        .img {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .img-2 {
+          aspect-ratio: 1.08;
+          object-fit: auto;
+          object-position: center;
+          width: 100%;
+          fill: #e5ebfc;
+        }
+        .div-5 {
+          align-self: start;
+          display: flex;
+          flex-direction: column;
+        }
+        .div-6 {
+          color: #004bfe;
+          letter-spacing: -0.2px;
+          font: 700 20px Raleway, sans-serif;
+        }
+        .div-7 {
+          color: #202020;
+          letter-spacing: -0.14px;
+          margin-top: 9px;
+          font: 500 14px/129% Raleway, sans-serif;
+        }
+        .div-8 {
+          border-radius: 9px;
+          background-color: #e5ebfc;
+          width: 221px;
+          max-width: 100%;
+          color: #000;
+          justify-content: center;
+          margin: 38px 0 0 18px;
+          padding: 14px;
+          font: 400 12px/19px Nunito Sans, -apple-system, Roboto, Helvetica,
+            sans-serif;
+        }
+        .div-9 {
+          border-radius: 9px;
+          box-shadow: 0px 20px 70px 0px rgba(0, 0, 0, 0.02);
+          background-color: #fff;
+          display: flex;
+          margin-top: 52px;
+          width: 100%;
+          padding-bottom: 10px;
+          flex-direction: column;
+        }
+        .div-10 {
+          border-radius: 9px 9px 0px 0px;
+          background-color: #f8faff;
+          z-index: 10;
+          width: 100%;
+          align-items: center;
+          color: #202020;
+          letter-spacing: -0.21px;
+          padding: 24px 60px 13px;
+          font: 700 21px/143% Raleway, sans-serif;
+        }
+        .div-11 {
+          display: flex;
+          margin-top: 20px;
+          width: 100%;
+          flex-direction: column;
+          padding: 0 17px;
+        }
+        .div-12 {
+          border-radius: 9px;
+          background-color: #004cff;
+          display: flex;
+          gap: 7px;
+          font-size: 14px;
+          color: #fff;
+          font-weight: 500;
+          letter-spacing: -0.14px;
+          line-height: 129%;
+          padding: 7px 15px;
+        }
+        .img-3 {
+          aspect-ratio: 1;
+          object-fit: auto;
+          object-position: center;
+          width: 26px;
+        }
+        .div-13 {
+          font-family: Raleway, sans-serif;
+          flex-grow: 1;
+          flex-basis: auto;
+          margin: auto 0;
+        }
+        .div-14 {
+          border-radius: 9px;
+          border-color: rgba(0, 76, 255, 1);
+          border-style: solid;
+          border-width: 1px;
+          align-self: start;
+          margin-top: 6px;
+          color: #004cff;
+          text-align: center;
+          letter-spacing: -0.14px;
+          justify-content: center;
+          padding: 14px 17px;
+          font: 500 14px/129% Raleway, sans-serif;
+        }
+        .div-15 {
+          border-radius: 9px;
+          border-color: rgba(0, 76, 255, 1);
+          border-style: solid;
+          border-width: 1px;
+          margin-top: 6px;
+          color: #004cff;
+          text-align: center;
+          letter-spacing: -0.14px;
+          justify-content: center;
+          padding: 14px;
+          font: 500 14px/129% Raleway, sans-serif;
+        }
+        .div-16 {
+          border-radius: 9px;
+          border-color: rgba(0, 76, 255, 1);
+          border-style: solid;
+          border-width: 1px;
+          margin-top: 6px;
+          color: #004cff;
+          text-align: center;
+          letter-spacing: -0.14px;
+          justify-content: center;
+          padding: 15px 13px;
+          font: 500 14px/129% Raleway, sans-serif;
+        }
+        .div-17 {
+          border-radius: 9px;
+          border-color: rgba(0, 76, 255, 1);
+          border-style: solid;
+          border-width: 1px;
+          align-self: start;
+          margin-top: 6px;
+          color: #004cff;
+          white-space: nowrap;
+          text-align: center;
+          letter-spacing: -0.14px;
+          justify-content: center;
+          padding: 15px 20px;
+          font: 500 14px/129% Raleway, sans-serif;
+        }
+        .div-18 {
+          display: flex;
+          margin-top: 12px;
+          gap: 15px;
+          padding: 0 1px;
+        }
+        .div-19 {
+          border-radius: 9px;
+          background-color: #004cff;
+          align-items: center;
+          color: #f3f3f3;
+          white-space: nowrap;
+          text-align: center;
+          justify-content: center;
+          flex-grow: 1;
+          width: fit-content;
+          padding: 14px 60px;
+          font: 300 16px/156% Nunito Sans, -apple-system, Roboto, Helvetica,
+            sans-serif;
+        }
+        .div-20 {
+          disply: flex;
+          flex-direction: column;
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          aspect-ratio: 1;
+          width: 28px;
+          justify-content: center;
+          margin: auto 0;
+        }
+        .div-21 {
+          position: relative;
+          border-radius: 7px;
+          border-color: rgba(0, 75, 254, 1);
+          border-style: solid;
+          border-width: 2px;
+          background-color: #004bfe;
+          width: 100%;
+          height: 28px;
+        }
+        .div-22 {
+          background-color: #fff;
+          display: flex;
+          margin-top: 4px;
+          width: 100%;
+          gap: 12px;
+          padding: 4px 12px;
+        }
+        .div-23 {
+          color: #004bfe;
+          letter-spacing: -0.16px;
+          align-self: start;
+          margin-top: 15px;
+          flex-grow: 1;
+          font: 500 16px Raleway, sans-serif;
+        }
+        .div-24 {
+          display: flex;
+          flex-direction: column;
+        }
+        .div-25 {
+          z-index: 10;
+          display: flex;
+          gap: 12px;
+          font-size: 14px;
+          color: #004cff;
+          font-weight: 500;
+          white-space: nowrap;
+          text-align: center;
+          letter-spacing: -0.14px;
+          line-height: 129%;
+        }
+        .div-26 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .div-27 {
+          font-family: Raleway, sans-serif;
+          border-radius: 24px;
+          border-color: rgba(0, 76, 255, 1);
+          border-style: solid;
+          border-width: 1px;
+          align-items: start;
+          justify-content: center;
+          padding: 9px 10px;
+        }
+        .img-4 {
+          aspect-ratio: 1;
+          object-fit: auto;
+          object-position: center;
+          width: 25px;
+          fill: #004cff;
+          align-self: start;
+        }
+        .div-28 {
+          border-radius: 7px;
+          border-color: rgba(0, 75, 254, 1);
+          border-style: solid;
+          border-width: 2px;
+          align-self: end;
+          display: flex;
+          width: 28px;
+          flex-direction: column;
+          margin: -23px 43px 0 0;
+          padding: 3px 0;
+        }
+        .img-5 {
+          aspect-ratio: 1;
+          object-fit: auto;
+          object-position: center;
+          width: 6px;
+          stroke-width: 2px;
+          stroke: #004bfe;
+          border-color: rgba(0, 75, 254, 1);
+          border-style: solid;
+          border-width: 2px;
+        }
+        .img-6 {
+          aspect-ratio: 1.56;
+          object-fit: auto;
+          object-position: center;
+          width: 100%;
+          stroke-width: 2px;
+          stroke: #004bfe;
+          border-color: rgba(0, 75, 254, 1);
+          border-style: solid;
+          border-width: 2px;
+          align-self: center;
+        }
+     

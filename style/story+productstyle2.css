@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.img-01{
+    width: 335px;
+    height: 617px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+}
+.img-01 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.white-squire{
+    width: 315px;
+    height: 124px;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    bottom: 2%;
+    left: 3%;
+    display: flex;;
+}
+.white-squire img{
+    width: 133px;
+    height: 108px;
+    margin: 7px;
+}
+.paragraph p{
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-top: 8px;
+}
+.paragraph button{
+    width: 157px;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+    background-color: #004CFF;
+    border: none;
+    margin-top: 35px;
+    cursor: pointer;
+}
+.paragraph button:hover{
+    background-color: #063cb9fb;
+}
+
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.circle-01{
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: #CCD9F9;
+    margin: 5px;
+    border-radius: 50%;
+
+}
+
+.circle-02{
+    width: 30px;
+    height: 10px;
+    border: none;
+    background: #004CFF;
+    margin-left: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.circle-03{
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: #CCD9F9;
+    margin-right: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+

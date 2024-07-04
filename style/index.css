@@ -1,0 +1,92 @@
+.logobox{
+    width: 187px;
+    height: 130px;
+    background-color:white;
+    border-radius: 100%;
+    border-width: 0.1px;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 1px 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    
+ }
+ .pic1{
+    width: 112px;
+    height: 92px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+.namebox{
+    width: 263px;
+    height: 61px;
+    background-color:white;
+    color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 52px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0%;
+    margin-top: 0%;
+}
+.pbox{
+    width: 344px;
+    height: 59px;
+    background-color:white;
+    color: gray;
+    font-family: sans-serif;
+    font-size: 19px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btnbox{
+    width: 386px;
+    height: 44px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+.btn1{
+    width: 386px;
+    height: 44px;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: white;
+    background-color: #004CFF;
+    border-radius: 20px;
+    margin-top: 75px;
+    border-color: #004CFF;
+}
+.lbox{
+    width: 296px;
+    height: auto;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    display: flex;
+    
+}
+.lbox input{
+    width: 41px;
+    height: 30px;
+    float: right;
+    margin-left: 90px;
+    margin-top: 10px;
+    margin-bottom: auto;
+    background-color: #004CFF;
+    color:white;
+    border-radius: 100%;
+    border-color: #004CFF;
+    font-size: 20px;
+    font-weight: bold;
+}

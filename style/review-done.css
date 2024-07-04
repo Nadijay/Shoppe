@@ -1,0 +1,97 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.content{
+    width: 1440px;
+    height: 719px;
+    /*background-color: red;*/
+}
+
+.review{
+    width: 640px;
+    height: 512px;
+    background-color: rgb(123, 188, 241);
+    margin: 103.5px 400px;
+    position: relative;
+    
+}
+
+.elips{
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:115px;
+    left: 284px;
+}
+
+.icon i{
+    font-size: 50px;
+    position: absolute;
+    top: 127px;
+    left: 299px;
+    color: blue;
+}
+
+.review-1{
+    width: 347px;
+    height: 232px;
+    background-color: white;
+    margin:0px 149.5px;
+    position: absolute;
+    top: 152px;
+    left: 0px;
+    border-radius: 10px;
+}
+
+.header{
+    width: 375px;
+    height:54px;
+   /* background-color: aqua;*/
+    margin: 0px 44.5px;
+}
+
+.header-1{
+    width:76px;
+    height:26px;
+   /* background-color:white;*/
+    font-size: 22px;
+    margin: 0px 99.5px;
+    font-weight:bold;
+    margin-top: 60px;
+}
+
+.order{
+    width:335px;
+    height:40px;
+   /* background-color:yellow;*/
+    margin: 5px 64.5px 5px 64.5px;
+}
+
+.para-1{
+    width:285px;
+    height:16px;
+    margin-left: 11px;
+}
+
+.stars{
+    width:189.03px;
+    height:27px;
+    /*background-color: rgb(7, 241, 163);*/
+    display: flex;
+   /* margin-right: 105px;*/
+    margin-left:95px;
+}
+
+.stars i{
+    width: 29.81px;
+    height: 27px;
+    /*background-color: white;*/
+    color: rgb(248, 248, 11);
+    font-size: 25px;
+}
+

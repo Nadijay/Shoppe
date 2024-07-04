@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    background-color: #B0B0B0; /* Ash color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+	font-family: sans-serif;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    
+	height: 712px;
+	Top:5px;
+Left:540px;
+	
+}
+.container{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	height:250px;
+	width:360px;
+	 background-color: white;
+	  border-radius: 10%;
+	  border:1px solid #ffffff;
+	  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top:150px;
+	
+	
+	
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+	border:1px solid #ffffff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	top:130px;
+	padding:10px;
+	left:700px;
+	position: absolute;
+	
+}
+.circle1{
+	width: 50px;
+    height: 50px;
+    margin-top:9px;
+	margin-Left:9px;
+    border-radius: 50%;
+	border:2px solid #F9F9F9;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	padding:5px;
+	background-color:#F9F9F9;
+}
+
+.circle2 {
+    width: 22px;
+    height: 22px;
+    margin-top:8px;
+	margin-Left:8px;
+    border-radius: 50%;
+	border:2px solid #F1AEAE;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	padding:5px;
+	background-color:#F1AEAE;
+	
+}
+h3{
+	position: absolute;
+	text-align:center;
+	top:250px;
+	font:raleway;
+	margin-Left:80px;
+}
+.para1{
+	position: absolute;
+	text-align:center;
+	font-size:13px;
+	top:310px;
+	Font:Nunito Sans;
+	margin-Left:70px;
+}
+.button{
+     display: flex;
+    justify-content: space-between;
+	top:200px;
+}
+.Cancel{
+	position: absolute;
+	background-color:#202020;
+	color:white;
+	width:128px;
+	font-size:15px;
+	border-radius:10%;
+	text-align:center;
+	padding:8px;
+	height:40px;
+	margin-left:38px;
+	top:350px;
+	border:2px solid #202020;
+	
+}
+.Delete{
+	position: absolute;
+	background-color:#F1AEAE;
+	color:white;
+	width:128px;
+	font-size:15px;
+	border-radius:10% ;
+	text-align:center;
+	padding:8px;
+	height:40px;
+	margin-left:200px;
+	top:350px;
+	border:2px solid #F1AEAE;
+	
+}

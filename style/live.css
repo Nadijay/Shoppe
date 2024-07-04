@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+    }
+    .image2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 500px;
+        
+    }
+    .image2 img{
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
