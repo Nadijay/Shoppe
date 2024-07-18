@@ -1,10 +1,67 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+
+$sql = "SELECT address FROM address WHERE user_id = $user_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $address = $row['address'];
+} else {
+    $address = "Address not found.";
+}
+
+$sql_items = "SELECT item_id, name, price, color, size, image FROM wishlist_item WHERE user_id = $user_id";
+$result_items = $conn->query($sql_items);
+$items = [];
+if ($result_items->num_rows > 0) {
+    while ($row_item = $result_items->fetch_assoc()) {
+        $items[] = $row_item;
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $data = json_decode(file_get_contents('php://input'), true);
+    $item_id = $data['item_id'] ?? null;
+
+    if ($item_id) {
+        $stmt = $conn->prepare("DELETE FROM wishlist_item WHERE item_id = ? AND user_id = ?");
+        $stmt->bind_param("ii", $item_id, $user_id);
+
+        if ($stmt->execute()) {
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'error' => 'Failed to delete item']);
+        }
+
+        $stmt->close();
+    } else {
+        echo json_encode(['success' => false, 'error' => 'Invalid item ID']);
+    }
+    exit;
+}
+
+$conn->close();
+?>
+
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/cartEmptyShownFromWishlist.css">
     <link rel="stylesheet" href="./style/nav.css">
-    <link rel="stylesheet" href="./style/history.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
     <title>Document</title>
 </head>
 <body>
@@ -30,86 +87,91 @@
     </div>
     </nav>
 
-    <div class="profile">
-        <div class="profile-img">
-            <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cyt-lGnRUaScJnGhZI8a~GT4Eia6VoLhkO-NWxR1H5p7J7~gZ4APUvIzRHYhl3MOEWPzGfMVXp1VJZVy0h6UWWJtZZ~9M1KYqHVeIdgT9MgvRj6KTSd~w94dyxedLmbbl3GQjnc0NFnT9TJFFsH~DQKfzmKMAxyRwDDFO4Rhn5DrYkwuhjfiUz5rfWnfwFDR~6Y8ysWhJondatm3caVy5nutFhAxBKiV9VDQ1sH7plOVizKp8Uz8bZ07vsPIuXdYUIiLS0jRBr9IlDPUh1uekxZARXRAORk0y3gv4et3Fi3F31l-BzFPy9y7t5wI9dIh11wKbnlW3zsDrTvwPcMr0g__" alt="">
-        </div>
-        <div class="profile-details">
-            <div class="announcement">
-                <h3>History</h3>
+    <div class="cart">
+        <div class="cart-1">
+            <div class="cart-1-1">
+                <h2>Cart</h2>
+                <div class="count"><p>0</p></div>
             </div>
+            <div class="cart-1-2">
+                <div class="cart-1-2-1">
+                    <h3>Shipping Address</h3>
+                <p><?php echo $address; ?></p>
+                <div class="icon"><i class="ri-pencil-fill"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-2">
+            <h3>Total $0,00</h3>
+            <div class="chout">Checkout</div>
         </div>
     </div>
-    <div class="history">
-        <div class="history-1">
-            <div class="history-1-img">
-                <img src="https://s3-alpha-sig.figma.com/img/494a/ceb1/aceba44ebb5e54c2e7dd0e011730861d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=I8tkc6fVmN5WU1OooY2flHYjATL0w6Sq6ZbFyXtei3tZJJbkywhDQtcoXUUi0~Cf4Ep9QHiwcUvIdo59Ccee-uMLUFR1mUhZD60ViM6e57TqaWOS1sUpzklpXQAr8aiGTN-jVYS~iUj7vUb4C15iJie-rix-yS5eLZVq77l7jkcIuRXtNS~cVq5O8A-i-1JyqJRw9ITWl-BwdiCTJMfsNAuaAs2kGIygY6Uq-~1rAgiILByXgVNz8tEkPNvqfPo5cmHERsKA97kaW9dbURbswBXsJ7lc0O2611Je79LblZ0JW0E9GP6AE8VfDnSG8i8PhfpqC9R2vcQ79YW6Y9QFhA__" alt="">
-            </div>
-            <div class="history-1-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>Order #92287157</h4>
-                <div class="buttons">
-                    <button>April,06</button>
-                    <button>Review</button>
-                </div>
-            </div>
-        </div>
 
-        <div class="history-1">
-            <div class="history-1-img">
-                <img src="https://s3-alpha-sig.figma.com/img/3a39/f1d1/d23c65e543db966efd9955c99cf0a27a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=q10Ivc1JzKA8Zompa8MQ5XUkg8q-hiWGhJmvEgt8R1Fwn4HIgYlPgRqD~AbimBB1cXV2n4tCCjPuTPkmCIjkjM~dXLY4yd817d9DjGJDblNOxEM7Sux~CJFH8r3x7BcaY0N~hGkKy4h8xrwYKbU2Ct3u~1NjhgC9DaLr4b15f5um5hJTvJ8T8N3XlOVqQe7SVh~JbZ4AU~rcxXwPqsUvRt3hfudsqjrF6yq1PXkSRREClLjhif3p9tD7jXyTvLp3i0QRruL2eWU8e1tc34pzMg7b7e-7ud1bBK214OM8NGqgDPZzM-hKWQWJIv5ok1HlNdzIpud8F1q3wPdcso7MFA__" alt="">
-            </div>
-            <div class="history-1-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>Order #92287157</h4>
-                <div class="buttons">
-                    <button>April,06</button>
-                    <button>Review</button>
-                </div>
-            </div>
-        </div>
+    <div class="shp-icon">
+        <i class="ri-shopping-bag-fill"></i>
+    </div>
 
-        <div class="history-1">
-            <div class="history-1-img">
-                <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cyt-lGnRUaScJnGhZI8a~GT4Eia6VoLhkO-NWxR1H5p7J7~gZ4APUvIzRHYhl3MOEWPzGfMVXp1VJZVy0h6UWWJtZZ~9M1KYqHVeIdgT9MgvRj6KTSd~w94dyxedLmbbl3GQjnc0NFnT9TJFFsH~DQKfzmKMAxyRwDDFO4Rhn5DrYkwuhjfiUz5rfWnfwFDR~6Y8ysWhJondatm3caVy5nutFhAxBKiV9VDQ1sH7plOVizKp8Uz8bZ07vsPIuXdYUIiLS0jRBr9IlDPUh1uekxZARXRAORk0y3gv4et3Fi3F31l-BzFPy9y7t5wI9dIh11wKbnlW3zsDrTvwPcMr0g__" alt="">
-            </div>
-            <div class="history-1-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>Order #92287157</h4>
-                <div class="buttons">
-                    <button>April,06</button>
-                    <button>Review</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="history-1">
-            <div class="history-1-img">
-                <img src="https://s3-alpha-sig.figma.com/img/29fa/e184/053666ddc17b71621107f3fdefffc22d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FFDq11Kyq1~x7LsY1ntdPCBz~cywC8juU6NzOcFpf9UOl0mjK5Uccna0lb22y7dAdk2n2ztRTV3qKRjGvtNXGbuokQI5pWp1U7jhVGgJUZbNiBMzj6jjSUgFkoveyKWJ6jL8lBZ-9IarRtEexaJu728C-WLgbVtUNqjI1WuTeT9Zs2vOiSTk5GNxt6rzThPlC4~JS0S--pWIL~QrE0e0zKpGyxHzeZbTaa-j1U0Pj0EnN8Nw4cmQN6kKHcf6IRkSgTFCBd4vllN3lj4R9HlGdPFl97AFnMbOYTQ4kfceomZJ-3CuvFeDddnbN8vVz7E09tHsM3VfEufhbT9yF8Eypw__" alt="">
-            </div>
-            <div class="history-1-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>Order #92287157</h4>
-                <div class="buttons">
-                    <button>April,06</button>
-                    <button>Review</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="history-1">
-            <div class="history-1-img">
-                <img src="https://s3-alpha-sig.figma.com/img/4e98/1e1f/88e55c19ce1aa419a238dff4dd3d7ee9?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lUxf1A6LqmT4t-n9BiNey-wLLlxee-OS93txrLDBmMxktFiKw5Q6m9fqrb2Crxqg0SMssnfe3IsX6SL8Fxh4gEcIZD2DZgCnEo0rqqRpnXWf3BlJCZI69rkvCz69klsj4~RpI4QZfbV~t8ohv2p-miW74xpod772LSX5RJw81~Aaf2hFPV8Mh4Ylgect6zU6ykoAdUstt3yKu~XCJ6Y-M4zrJ-mcSJvOlmXWtUDVlUvluyjxDN~mOkdnfde9YH487qyaPqCs6h2ScITWJ33F5HkD3PAb9hhcHmWV-96ZHNRWnApa-gdq3KxRaRh5lnfDqwk00WAdY~bin81uWyQXaA__" alt="">
-            </div>
-            <div class="history-1-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>Order #92287157</h4>
-                <div class="buttons">
-                    <button>April,06</button>
-                    <button>Review</button>
-                </div>
-            </div>
+    <div class="content">
+        <h3>From Your Wishlist</h3>
+        <div class="content-1">
+            <p>See All</p>
+            <div class="arr-icon"><i class="ri-arrow-right-line"></i></div>
         </div>
     </div>
+
+
+    <div class="wishlist">
+        <?php foreach ($items as $item): ?>
+            <div class="wishlist-1" data-item-id="<?php echo htmlspecialchars($item['item_id']); ?>">
+                <div class="list-img">
+                    <img src="<?php echo htmlspecialchars($item['image']); ?>" alt="">
+                    <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
+                </div>
+                <div class="list-details">
+                    <p><?php echo htmlspecialchars($item['name']); ?></p>
+                    <h4><?php echo htmlspecialchars($item['price']); ?></h4>
+                    <div class="btns">
+                        <button><?php echo htmlspecialchars($item['color']); ?></button>
+                        <button><?php echo htmlspecialchars($item['size']); ?></button>
+                    </div>
+                </div>
+                <i class="ri-shopping-bag-3-line"></i>
+                <i class="ri-add-circle-line"></i>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.del-icon').forEach(function (delIcon) {
+                delIcon.addEventListener('click', function () {
+                    const itemElement = this.closest('.wishlist-1');
+                    const itemId = itemElement.dataset.itemId;
+
+                    fetch('cartEmptyShownFromWishlist.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ item_id: itemId })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            itemElement.remove();
+                        } else {
+                            alert('Failed to delete item');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred');
+                    });
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

@@ -1,14 +1,32 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+
+$sql = "SELECT order_id, order_name, image, date FROM orders WHERE user_id = $user_id";
+$result = $conn->query($sql);
+
+$orders = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $orders[] = $row;
+    }
+} else {
+    $orders = [];
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/nav.css">
-    <link rel="stylesheet" href="./style/WishlistEmpty.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/history.css">
     <title>Document</title>
 </head>
 <body>
@@ -34,166 +52,35 @@
     </div>
     </nav>
 
-    <div class="wishlist">
-        <div class="wishlist-1">
-            <h3>Wishlist</h3>
-            <p>Recently viewed</p>
+    <div class="profile">
+        <div class="profile-img">
+            <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cyt-lGnRUaScJnGhZI8a~GT4Eia6VoLhkO-NWxR1H5p7J7~gZ4APUvIzRHYhl3MOEWPzGfMVXp1VJZVy0h6UWWJtZZ~9M1KYqHVeIdgT9MgvRj6KTSd~w94dyxedLmbbl3GQjnc0NFnT9TJFFsH~DQKfzmKMAxyRwDDFO4Rhn5DrYkwuhjfiUz5rfWnfwFDR~6Y8ysWhJondatm3caVy5nutFhAxBKiV9VDQ1sH7plOVizKp8Uz8bZ07vsPIuXdYUIiLS0jRBr9IlDPUh1uekxZARXRAORk0y3gv4et3Fi3F31l-BzFPy9y7t5wI9dIh11wKbnlW3zsDrTvwPcMr0g__" alt="">
         </div>
-        <div class="wishlist-2">
-            <div class="icon"><i class="ri-arrow-right-line"></i></div>
+        <div class="profile-details">
+            <div class="announcement">
+                <h3>History</h3>
+            </div>
         </div>
     </div>
-    <div class="user">
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/0a41/92cd/dfc715a39d328d71969353242251248e?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=miywIjdeksIT7FhM6snBhPoHb5PyewqLO5ncrsyaJ8Mi4fIA55fDTvEn~Fxqi1XvRefbFpFhJAo8Ks90YkWA4d6lUmU51fWvPAf6-uiucYtl88qBe6MuO7uDttsO2A3KHzQ17JVxYPAHDnVPcA7ba3-TEalLk1S-ddJBbCxCs0faqaXDvtGY3QNeytzlbOjrx7Y6ZC4xMLMFymqMppayDP0GlTz9jJbkV8gh-TIkXbgpvdAs2uikW96HnEKbbVJJWeV3JJeTJ5RV0unoawOyqVGEckGSKdFr9aCZG09zhsVOqd2pl9NRbYM5sWQjENfhOzkm8AIYa-WR3s60u0afLw__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/1839/4337/441be8ec93bb43d7fd373d79c6adeeec?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SaIAoO8q3yl6P4ZpNFl47RPSbAi17Y0TKOohxYGUTA9B8NUvrBIErvqpJRpJzqerfOmFHt6Po7aVmZqmTVR5dLUNg5ojLJVpj23bKYptNSbHEGdGK2snVnoKfQZwAmiZfbFOWsi8XrpQ4B-MLcheeKaJafmuyfaFu5NuvCDE~jvIc3VjqZdylXHT936O2Hm~2AbpbRpgO00vYSweROvvqvcsm4dHuYIxuedrFW2fq6glvPz2z~YLKuWjj6OcSUPLCMlR5JDbqJK4Rp1BoSaALO-K0K1HK05GM-NQPmkf8-3VgJ4risEy9QOcaZ1YYu6YkhSFThSapiliYQhDVvvyBg__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/a59f/a349/ac198655fc26bb826bb389c550d33d9f?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AUv~FSUrTaqDZgpbU1AxHLlZevy5gXBUotHP6WzdTB6ikmfkZrKbtmxgUrduSPt4zbh-8rSlwRf6SR0C064oM1rxW0aktskiELRWyvLbsLGtxWHCam2PdTUHZ6r~474wpASYs5Bb82kvHQvvk2nxUOjt1uf8G7wZ4G5t2lxPZ5K0-RfhATOT0SdEmgslUzyCecVqYzmT~XA1btbhayqd26N0Ejfbn2bq0aaJM99R5BPwJ-jddrgYUYLM1GYTyN2MImHMUUAttUyqyAaNvhCNFEoSaeiophqK7cYRMtmncHlmpo2bPQxMbBdlZVmMBof8JnNUEPr9HKirqG3i9Fop8Q__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/a83e/a946/c62c6f134effe41537b18c9db6256a82?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ehBWz~bjrfoBet82qi6fB9mH12jTM51fQtUeQulRIVwxpzDdF74bxnKN-RgGfEXBBqM4hwwIcShZ9efbm5Silwu4hFh2teo0VxXiIpBL-ZcPYFz4ILiKF8DB57yemLXX6CXPgJ35S~Spy~ZTxUgD4PToSOXIRHKqZLI3LnrpSn88PDSnUYbP5uamAldoNFMfUUP~E3Owrg9rGoeZrHYpAjqoDvx56A5CQ2P11HC96UgLT2es3vzE5YXrRDPYwLv-639qrTsSx1RzEs8m6g36tERsY3w4Q1z5lUUTOfibsJ7dIW2~KHCeEj6knTTEYLR8mFhxTS5011XGEDwZwBtiXg__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/2735/3930/e7d78f58d556c1e7db3b90c000655b32?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=X2S4KycwD97Zjl7~nhon8nJ7VIivSCmlgIwsFwNxFr9WRvZWkxCyZWnlq3~bPJL792MfEyKJoNOdg67h0inhE0xTf~EQ9~VP00pFDnsh7kdnlBJgu2HR2InxM4OkmYUtwqNSy8cmw62sS2Iwz4u1ASYHN~IdlsvmqB9DacZl9AmxsLxrXsgGEo3~Yo~aLaD4q4a1iK5cMtOyVNr7Z328QAkR3wBLDrvqyWi4q6gxZ~p5sOewhj2h7O7ujtROCOA22pYR2693YzXQ82x8unUwR9u9FTK8YG5z0H8n5FeSPRLlJIx-hCMEOrn5D5ObbR2CCo0ZjzV8aghA5QCdOejVtw__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/0a41/92cd/dfc715a39d328d71969353242251248e?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=miywIjdeksIT7FhM6snBhPoHb5PyewqLO5ncrsyaJ8Mi4fIA55fDTvEn~Fxqi1XvRefbFpFhJAo8Ks90YkWA4d6lUmU51fWvPAf6-uiucYtl88qBe6MuO7uDttsO2A3KHzQ17JVxYPAHDnVPcA7ba3-TEalLk1S-ddJBbCxCs0faqaXDvtGY3QNeytzlbOjrx7Y6ZC4xMLMFymqMppayDP0GlTz9jJbkV8gh-TIkXbgpvdAs2uikW96HnEKbbVJJWeV3JJeTJ5RV0unoawOyqVGEckGSKdFr9aCZG09zhsVOqd2pl9NRbYM5sWQjENfhOzkm8AIYa-WR3s60u0afLw__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/1839/4337/441be8ec93bb43d7fd373d79c6adeeec?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SaIAoO8q3yl6P4ZpNFl47RPSbAi17Y0TKOohxYGUTA9B8NUvrBIErvqpJRpJzqerfOmFHt6Po7aVmZqmTVR5dLUNg5ojLJVpj23bKYptNSbHEGdGK2snVnoKfQZwAmiZfbFOWsi8XrpQ4B-MLcheeKaJafmuyfaFu5NuvCDE~jvIc3VjqZdylXHT936O2Hm~2AbpbRpgO00vYSweROvvqvcsm4dHuYIxuedrFW2fq6glvPz2z~YLKuWjj6OcSUPLCMlR5JDbqJK4Rp1BoSaALO-K0K1HK05GM-NQPmkf8-3VgJ4risEy9QOcaZ1YYu6YkhSFThSapiliYQhDVvvyBg__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/a59f/a349/ac198655fc26bb826bb389c550d33d9f?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AUv~FSUrTaqDZgpbU1AxHLlZevy5gXBUotHP6WzdTB6ikmfkZrKbtmxgUrduSPt4zbh-8rSlwRf6SR0C064oM1rxW0aktskiELRWyvLbsLGtxWHCam2PdTUHZ6r~474wpASYs5Bb82kvHQvvk2nxUOjt1uf8G7wZ4G5t2lxPZ5K0-RfhATOT0SdEmgslUzyCecVqYzmT~XA1btbhayqd26N0Ejfbn2bq0aaJM99R5BPwJ-jddrgYUYLM1GYTyN2MImHMUUAttUyqyAaNvhCNFEoSaeiophqK7cYRMtmncHlmpo2bPQxMbBdlZVmMBof8JnNUEPr9HKirqG3i9Fop8Q__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/a83e/a946/c62c6f134effe41537b18c9db6256a82?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ehBWz~bjrfoBet82qi6fB9mH12jTM51fQtUeQulRIVwxpzDdF74bxnKN-RgGfEXBBqM4hwwIcShZ9efbm5Silwu4hFh2teo0VxXiIpBL-ZcPYFz4ILiKF8DB57yemLXX6CXPgJ35S~Spy~ZTxUgD4PToSOXIRHKqZLI3LnrpSn88PDSnUYbP5uamAldoNFMfUUP~E3Owrg9rGoeZrHYpAjqoDvx56A5CQ2P11HC96UgLT2es3vzE5YXrRDPYwLv-639qrTsSx1RzEs8m6g36tERsY3w4Q1z5lUUTOfibsJ7dIW2~KHCeEj6knTTEYLR8mFhxTS5011XGEDwZwBtiXg__">
-        </div>
-
-        <div class="user-1">
-            <img src="https://s3-alpha-sig.figma.com/img/2735/3930/e7d78f58d556c1e7db3b90c000655b32?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=X2S4KycwD97Zjl7~nhon8nJ7VIivSCmlgIwsFwNxFr9WRvZWkxCyZWnlq3~bPJL792MfEyKJoNOdg67h0inhE0xTf~EQ9~VP00pFDnsh7kdnlBJgu2HR2InxM4OkmYUtwqNSy8cmw62sS2Iwz4u1ASYHN~IdlsvmqB9DacZl9AmxsLxrXsgGEo3~Yo~aLaD4q4a1iK5cMtOyVNr7Z328QAkR3wBLDrvqyWi4q6gxZ~p5sOewhj2h7O7ujtROCOA22pYR2693YzXQ82x8unUwR9u9FTK8YG5z0H8n5FeSPRLlJIx-hCMEOrn5D5ObbR2CCo0ZjzV8aghA5QCdOejVtw__">
-        </div>
-    </div>
-
-    <div class="crcl">
-        <div class="circle">
-            <i class="ri-heart-line"></i>
-            <i class="ri-more-line icn-1"></i>
-            <i class="ri-more-line icn-2"></i>
-            <i class="ri-more-2-line icn-3"></i>
-            <i class="ri-more-2-line icn-4"></i>
-        </div>
-    </div>
-
-
-    <div class="wishlist">
-        <div class="wishlist-1">
-            <h3>Most Popular</h3>
-        </div>
-        <div class="arrow">
-            <p>See All</p> <div class="icon"><i class="ri-arrow-right-line"></i></div>
-        </div>
-    </div>
-
-
-    <div class="items">
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=acadrY7vtyyx0GNf60LI0He4d11oB0pOzVLmuLaQAd-Onbm-tEbpi5TRJ-mhD2Tob-Q28HPkam4UXux~m-4rVvluvjXyS2qreiBPcbOc4GYeXTRnkOEV6JFwxwm4trNUKWiFb8pQUkhT6pwuJan0zT8rjdaJbOfmOBb56spcLuW5gNJO0KkDwdp33JddtPD2PhgwpwODEqqgKFg-FvJBvgIjMLbn6bHnPE0EAQOFQz-jiopVs8ES6-uzzPNacRIvFbRLVjLkoLmiOY08RCJI~ow2yNIMx4w~qsfJC6ssemZxPTBpaPWl2wfRQpKwWXiBvH3QixvUmzGmltmATnRsXQ__">
+    <div class="history">
+        <?php foreach ($orders as $order): ?>
+        <div class="history-1">
+            <div class="history-1-img">
+                <img src="<?php echo htmlspecialchars($order['image']); ?>" alt="Order Image">
             </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
+            <div class="history-1-details">
+                <p><?php echo htmlspecialchars($order['order_name']); ?></p>
+                <h4>Order #<?php echo htmlspecialchars($order['order_id']); ?></h4>
+                <div class="buttons">
+                    <button><?php echo htmlspecialchars($order['date']); ?></button>
+                    <form action="review.php" method="get" style="display:inline;">
+                        <input type="hidden" name="order_id" value="<?php echo htmlspecialchars($order['order_id']); ?>">
+                        <button type="submit">Review</button>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/3a39/f1d1/d23c65e543db966efd9955c99cf0a27a?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bZyDE2Lwd5NnyVea-yz9sIQ0k~20y-o9zU3iuqquf~~tTJRWWXcaqHc8~Sb6C4VUlK-0-r2z~m3h82fSVLcmev8ecTJaVF5PptepPAJnXg9KuolCLE2omoBrVbf9mTkrLyBhbZJSoO2Qyx0Azsn5SrCkG85Sxkjw28wyufa6o7tYS-F250cNdt1tlPuXempItBoB73kKo05lPlueMzn0YGH-Kl7cLHtGcMhK8PLZVfOTvDN~2MaWG~zH8WUpX70vDX1m4nuI1FFNRUWaVUgduGco~pkNkRSzlJOkrYkI84MiFA1aDyOxwlZW2JTJ96RGQBzqPWuRfG3-jutYjTXDgg__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/337a/22ae/49b350434fc9e50a9abb7351559ff374?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Vgp5l6pvLG66Ywy6~IMOkLKDK2m7hPD1GdHJ~SM81o6tLzFx5fbsTzDQEME5StzPdMqArFdd3Tc-2Y~QhVUpATzQ3KrRQtd7y6ufbHqcJ12712MbRU86dCDO6ZuVJ3XyjqjIambtxSKTOXxiHqlH3apBVQP3ee581TYy~McCjXs4ebUeMZrE~11xspQq39d5~rBNUoUr~phaOJwEUihw3U4NEfNDPCZa~t5vtu7eVQgZwK5HK536ET5DfM1~3pJHRkmpS5i8Qd-AzV~g1Y9z8L5O-SULVEnCnXLMol8ZaCgU6vzKQoNEMzhCHXjNSAasoiqORTfdUpAVmb3Nvi5PLg__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/902c/2ed6/848fbde49066a7244b1f4197b721c175?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V521BHLzp2W7y-zvhiRf7MSgOULEHmQ6rrohuTtT3HqgSDKSsuYsxAKbP-1vcBD4QvwInDYJ9DdUm1JvWZu11QLJy-AYNIYNyokj3QPezyEqsdnhsYVYw-2SJvXOl22Id-6cCfouYBfkAj4bYaCjGwm59ua0PyicRDYwrKYXsKkhfq2DYANwvHjAYJjvOcHvDmMcIwZMf6P7C8Azb80CaIAf-YcLumfLADihobk3-TyWccjHvDKE7SW1llonSqhd2f6Bb1pqdNRTNMuQUwyPLooRBHpfRKk8EbZRw5rgbhOnuuaJ7lgOCngcoJA~B2-r1h73DG1pf7fCU~4xO8~c~w__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/d0e3/5380/9225dd85a6186a241fb74e00f38dc466?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o3ZdQrBXP9rjFb6V63hv~ipkIP7AGOklcSoQfbT4dVLoJVyamulBjdRWdUpSh7NwIT9gOA~IZlxmrMsUrgb-1DW4OvmXt-rKwaEQ7rPcNH4xt5NfLsxS3jqyd6wnvS8YnAmrNCJFTV3j6Y3RA8SwHqDFmz9H1robXuXbKS8C9pn-7xKm2-6jYX5D1ha13PX24rIH6R27s~3UcnIUMQrfod5PWUpifpind9XLm8G3IlDWKpJDGBx00MwDTrHPMruhy7s8Qi~NYpozRg~XgvLydRL496ly9A3dPsKjbADFLaRmVDGd0U6AJbkucqHe3vJj5NXNVYQ8i9HbMtsvRuPeCA__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/2c80/6617/1ca1707228b3c5e1c8fbc46e253d9eb5?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oRzFPXjQvMVLeqSm3ixbvRRydPNc5XkiNlOAqCwtjIoj6-mkAdNHeOrrl~LRY7SBx6xjadreR70vrDolPFEvGaGFD67CGg0K~Lzq~thMCNUfz07Gfa7knMy~3peqcGP0s-qHlXmwbSpAFgjFWpvuqWyvd1qy8XFWnOrcJq18k~ptE-OLogYF2nz8AGA7wg6eOqHTyPtLxF1HxFpzW4jJMjPtlorwuVyWdHCZX3OQOUjUnGbonjrSIcyL6wp~v7TmWWeNyCHYI6MGKpvqqynPkHYv4m~LahNbm9sWh9g9S2SNycwwUxTj2Dcj5VX8FYxKc1VtPVjeWJHhrig1jlBMcg__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/047e/ec6d/b45510f2ec87e9c790a8d79f37764698?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m7LTXDFFSYCAig-lk8j5dsF0SUxbnoFvtOOpRxr7fWXnVMyBk0R9laZuWRchpOHNTM9IfN5sLIvmt9V9vwWt-SaFQQjko4PZJowBjU1ZAh-sVHVHmp~GKDxs7fsyzstNu6v-MMBgjrswJijDfRTPnrb8x1i9NVUHoedOwcWODfTXQqeZKcpuT7gw23tNQbGrdxtCRlqpQh~tpRvjwmXnBZhIT45DXjGkzG4t7zpP9hL13IqhenQbGWNYD~tJs34BVJ3tWfthJDEy8GHigEgaGnZ8aqK3ku2vvgMOLtkfR8k80POj8rxLC74WC79SKDvuKZSZk64RAcVpmjvdwoV6QQ__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
-
-        <div class="items-1">
-            <div class="img">
-                <img src="https://s3-alpha-sig.figma.com/img/64c4/5ae5/26b18942f408de7e98dfd58cb9a6e202?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IwMWlBOoW1hsnaTyL~H-NmlHywimRaIQZJ2en33Ur290jG54BYUZzxXfo1E-F0-dPjS5u7unvUbWq5~DA1kSthH5reMP9~vNNDHVUDY3AScMXWKtkbp4VOffJCx0YnuJiUvE8UodUmlLQavd3UnZu4jt8-CyPsbDEe87UoHaNrAd4CDOfJ73fGw5vS~w-dIqo0u6JNshYtHcQguIVSapWxHuqggg5DIhv5cM7Md4ZOn3lt-dl2N-3EfeNOwabUWadMaZKTWt~GEMV7~mo3NL14BPtb-SztqNoRbAaQ8P6E7cFgG6eYkas8Qoo5PqknixPZmxuAWK1wwcg~sn0dZg0g__">
-            </div>
-            <div class="details">
-                <h4>1780</h4>
-                <i class="ri-heart-fill"></i>
-                <p>New</p>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </body>
 </html>

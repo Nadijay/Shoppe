@@ -270,9 +270,8 @@
     font-family: var(--mainFont);
 }
 
-.price-2{
-    
-}
+
+
 .price-2-1{
     width:602.2px;
     height:4px;
@@ -282,7 +281,7 @@
 }
 
 
-.price-2-1-1{
+.price-2-1-1,.price-2-1-3{
     width:72.12px;
     height:40px;
     border-radius: 50%;
@@ -292,6 +291,7 @@
     top: -17px;
     left: 50px;
     z-index: 1;
+    cursor: pointer;
 }
 .price-2-1-2{
     width:317.33px;
@@ -303,17 +303,6 @@
     
 }
 
-.price-2-1-3{
-    width:72.12px;
-    height:40px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.2);
-    background:#FFFFFF;
-    position:absolute;
-    top: -17px;
-    left: 300px;
-    z-index: 1;
-}
 @media(max-width: 680px){
 
     .color-2-1{

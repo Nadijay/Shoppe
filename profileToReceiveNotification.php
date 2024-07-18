@@ -1,3 +1,14 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+
+
+$sql = "SELECT title, description, date FROM announcements";
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +51,16 @@
             <h2>Hello, Amanda!</h2>
             <div class="announcement">
                 <h3>Announcements</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quas.</p>
+                <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<p>" . $row["description"] . "</p>";
+            }
+        } else {
+            echo "No announcements found.";
+        }
+        $conn->close();
+        ?>
                 <button><i class="ri-arrow-right-line"></i></button>
             </div>
         </div>

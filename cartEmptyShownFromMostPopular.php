@@ -1,10 +1,29 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+
+$sql = "SELECT address FROM address WHERE user_id = $user_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $address = $row['address'];
+} else {
+    $address = "Address not found.";
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/cartEmptyShownFromMostPopular.css">
     <link rel="stylesheet" href="./style/nav.css">
-    <link rel="stylesheet" href="./style/profileVoucherReminder.css">
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"
@@ -12,7 +31,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <div class="logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABSta4ztO2Z73YCEvZDFgCPesndhqt-seBg&s" alt="Logo">
         </div>
@@ -32,74 +51,126 @@
 		
         </div>
     </div>
-    </nav>
+    </nav> -->
 
-    <div class="profile">
-        <div class="profile-1">
-            <h2>Hello, Romina!</h2>
-            <div class="announcement">
-                <div class="announcement-1">
-                    <div class="heart">
-                        <i class="ri-verified-badge-fill"></i>
-                        <i class="ri-heart-fill"></i>
-                    </div>
-                </div>
-                <div class="announcement-2">
-                    <h4>Announcement</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit luctus libero ac vulputate.</p>
+    <div class="cart">
+        <div class="cart-1">
+            <div class="cart-1-1">
+                <h2>Cart</h2>
+                <div class="count"><p>0</p></div>
+            </div>
+            <div class="cart-1-2">
+                <div class="cart-1-2-1">
+                    <h3>Shipping Address</h3>
+                <p><?php echo $address; ?></p>
+                <div class="icon"><i class="ri-pencil-fill"></i></div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="recently-viewed">
-        <h3>recently viewed</h3>
-        <div class="recently-viewed-items">
-            <div class="item">
-                <img src="https://s3-alpha-sig.figma.com/img/0a41/92cd/dfc715a39d328d71969353242251248e?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YRlptMZQ288qKxPmdVSmt-jxYClTtIhJxsFN~0IiTTh0U85RlEfZDI~F90xXSv2rdiuoc2xrJl5x8a5SEIJ-muM9tuLkbmLPRpNnTpdh-4eZK6ZpC0z2em3oizaDsIUYp4sddSthFdOpWdFEGSiVcnK~1QwHeGkvrjfYlW03RGgQ6NLr5xeRM6GRcX2vwMA1JM6mbnuDZtYO0liQNw8QSGRET0x-HMV1bfKlBv1xyUa7WMX3x9rSQeevsFVBMNlazcHn5CRZW380maIPD3JD-p~qdbO5MjkUaIkyGuGvJFzfCdvlqhZFp~er2CgudgOuRYGUrooIyvyUTHtTywDMzA__" alt="">
-            </div>
-
-            <div class="item">
-                <img src="https://s3-alpha-sig.figma.com/img/1839/4337/441be8ec93bb43d7fd373d79c6adeeec?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OKKITrSjLnqDoMU8Qs8X9BUBvTm2Qg~82qVe4dgAHgEeivcf~x~qeisRlDPFsJf0qCxnzH7Rgf13addGpGJWLTwPAOwN~ZhMSWXhaiXjgKahPdNi89ENFUIZKzHAAHo4DwDfS0U3CVX5~Yq~Q2h2iybMDqki~cA9AbLG7jWcdakD8Q4CAC-0KyufIotRSoNrsMeLzOgnlWxpGNJeDyD1PXOFqRhK6abRU8L3Bi4YjEz0GjI~KpqJQRQlSqsLXyRLMvhgCaSKwWRvAALzXGKc4x6cMI3rjfh36p3jTM6m5irJF5gUGhBBt3rinK1JETMn6OCjOLTKmubrwhtQAfWDSg__" alt="">
-            </div>
-
-            <div class="item">
-                <img src="https://s3-alpha-sig.figma.com/img/a59f/a349/ac198655fc26bb826bb389c550d33d9f?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XZMT-7AwztpdkBESus-L1SPPOGf3YTs-XLj37brbboTUOdZLpbRBWt89FWgScLQy3G125LUdCAYtbdU317suuE60jD1SYzZQ~mVcp37W4GA47zsaggUH2mKJeaCQ-i8NLXBKMe5hlsVcTKl3u5tIk1S7Vv6NjFjsfLeaNhFJn1fhHGunSc99IU5wt94eM8gE812fr4sA0IWKJWjhyeKpA-d7e7tWMbbunvpP-6KEEt6ZXh~u7QQ5FdaobQveCsiNXV-EWcoCx1NJOJ1qhAJ25SfliC1BUtao-Dw2Q~K52d1RZQIPjcyTOMz9su46w0GoW-yd2oEGuc0UjxTUJdHhIQ__" alt="">
-            </div>
-
-            <div class="item">
-                <img src="https://s3-alpha-sig.figma.com/img/a83e/a946/c62c6f134effe41537b18c9db6256a82?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=axxKb47tNUkGY6B88M3kIDydvztRZElRJhxFKxwUdv0Hf-QbHk2RcYqEHRnJwVM~Xg1A2wUTrFJk5HPS1ONmDAxyHX4PNQpOLorBSuc8sczkik6n0fGV9UZnRh0CgPcHqIuiInm5OBDaMPF5g-23nU-nC6vve5CMwlarG4vvzr8Z-sB-mLN3WxfCOZPMSHCPO2ozXUIY08vjwlS0ISMdL8XWF442MdUFqQvixFgUav3612Tne250BXCOMyYpBgluUoOqoHOtP9SKAdCmXryCLT72lBqnZrkx433~U5FeoPUsRwj49pJ3WxKEeTJ9KVfrnpFh-tVIMpBN9SXBqzInJA__" alt="">
-            </div>
-
-            <div class="item">
-                <img src="https://s3-alpha-sig.figma.com/img/2735/3930/e7d78f58d556c1e7db3b90c000655b32?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UAH~MTCywuwb-MXQ-Gy-FW~0v0PgeF8WhypACagpO~hglMf-zJyp40~pwWiws8TKCg6msdls~at6mrhyz3gqA2jczDirBSpDdELVsrMbZ-sypWyZlvx21725e3cS67wZ2Dsy3QqXalqN5VlUa9kAiBrxMZlcQkeTTPtoRhHeCMMUAiYDR8SzI0C7w7tKgmPmIdMEyrgiDSkbrQ3jyW3N19~B3M3qUJqOmPhVsMk7NhH8w8dczJ2QZBLvdZB2PvrWKTdfowk15aDQ5SWsJmPWrzKBbnn1Q~61WkVe7Ob-9QvQ55Q0CFzppHF4HUTCgIKayGdC7nhtn4-kkiPQM3-i7Q__" alt="">
-            </div>
+        <div class="cart-2">
+            <h3>Total $0,00</h3>
+            <div class="chout">Checkout</div>
         </div>
     </div>
 
-    <div class="my-orders-0">
-        <h3>My Orders</h3>
-        <div class="my-orders">
-            <div class="btn"><button>To Pay</button></div>
-            <div class="btn"><button>To Recieve</button><div class="circle"></div></div>
-            <div class="btn"><button>To Review</button></div>
+    <div class="shp-icon">
+        <i class="ri-shopping-bag-fill"></i>
+    </div>
+
+    <div class="content">
+        <h3>Most Popular</h3>
+        <div class="content-1">
+            <p>See All</p>
+            <div class="arr-icon"><i class="ri-arrow-right-line"></i></div>
         </div>
     </div>
 
-    <div class="stories">
-        <h3>Stories</h3>
-        <div class="items">
-            <div class="items-1">
-                <img src="https://s3-alpha-sig.figma.com/img/c9d5/52f9/ae0e0e2fca6d47ea4a77c7b3c7af5929?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E~vgH42OEzqitiMHOx-R5RfHnibMTN2nnyuSr~K8pNt9yPqU38oRV-ke0C8IFu-NtnnBjK0c8eGi4FolEFPAOg4X~ytzkVjdyQgESdI-73BP56fNRZg9lqpimo06w1s78tBy7Gzq3SfZgjwWVDMmlfq0iZfYwgvpvd0eLciyV8gWo6T~EFHALxHRrq6cgEhKnHuImSpbCtRI1Vf7vK00YSNrPm3n4nL5afGLiyDIIsz2Oh6qjggj6ScMD52SEHMqCmAzUqopp1Gym4hS3U3itz79Whxj5OChB2XKblzeqf-PSjybOKa5Q2f8bGQqMfPQgV8gqXGf3GRAtyh4zid7fQ__" alt="">
+    <div class="details">
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/39a9/4b6c/b66665a43b8e7d98053af3ed69d2469a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aM2DJ8naZ0l9JqWTHCvVHpU-LPagKxw2SgZFAR~KQOPgMro2R8rORG2GRSATx-A1DUmcX9cyg~5ewFGAio3o0GB9kExf1q2xjOWCchkuafFyYOeRHxDzkPOm0Cuws-tMy7NTErCR-AodzrZ2O-rajg3KqnjzUR8roRSQ3YPYrFQljFxabHJ89Ds5~f-xjBqOD4kKQW1pFoQ~b2ZaaqNfO0equL6-n0G-7NROjbdm5Ik3G7As17mNZta~SoXVLa2cc9zfaDqNIyAVw8u4gCZGLIVzrHLqKZ-Po6O9WVC-5CrmED8V~CEayYGNkSyZ3eGK8nyfNr5A~~PIY9ucy9a9~Q__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
             </div>
-            <div class="items-1">
-                <img src="https://s3-alpha-sig.figma.com/img/5c20/7bb4/21788ca6b8a82c20e2532463f6fb5f6a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=plo8kdAgEy~rdqr1Hnj4Xxj9USw7oHShThE316gENfxQo0NRR4SlxI6RTSnvYNEkCmf18WORd8fJ5Jtwv5t0kunl6kQ-5ad5nYcGwKgZd6SHTrmTSkZO2d64fg9dNmlaT8ZErxb9m47oxnGn34f1wHFrmFLIoEedg8vFoNTFdO8BqOmVd6ujHyGlb4TsKuDXe0VXVflcRK5hI81P77AjTWYH2CAL8DNhScB2YdT7xLDa8AHeJTOclKu-ARDfVUFscgbys2Uq-Kc9hva7KbbR1XF~XGpW1d7udPqclsaOuhK0IGvaEJQdvjCCeieOOojRknsRqjhm-4ZR3g2ANMJooQ__" alt="">
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cyt-lGnRUaScJnGhZI8a~GT4Eia6VoLhkO-NWxR1H5p7J7~gZ4APUvIzRHYhl3MOEWPzGfMVXp1VJZVy0h6UWWJtZZ~9M1KYqHVeIdgT9MgvRj6KTSd~w94dyxedLmbbl3GQjnc0NFnT9TJFFsH~DQKfzmKMAxyRwDDFO4Rhn5DrYkwuhjfiUz5rfWnfwFDR~6Y8ysWhJondatm3caVy5nutFhAxBKiV9VDQ1sH7plOVizKp8Uz8bZ07vsPIuXdYUIiLS0jRBr9IlDPUh1uekxZARXRAORk0y3gv4et3Fi3F31l-BzFPy9y7t5wI9dIh11wKbnlW3zsDrTvwPcMr0g__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
             </div>
-            <div class="items-1">
-                <img src="https://s3-alpha-sig.figma.com/img/0f92/7313/fd27afa27ca1eb56190ae5462a749d4d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BljeSKZ~WK7FrH-3I~9o9ercvQa6s~BWYlbmoQK1M5vEf-87Vm7hA3nkm4oBolhBhDcZtewlNsPdL1zF3ExMjIwaPVNwpDp0Q99dUvfAjunA~PRIqdARqzoKaKgHp2UYaWs~Lip07mYApq3zFXevxpPt60bUgi7TyV6rS8t0MM-IrnHyYM856NXPw~ajPWCB6twVYRMgrWI9Fe1Dfsw7Iy-T9H0SemuO4C7v5kLyi2zHncN7mFJjhukmHRJgPFk3RFJysqXranu7Lra2gRjhMIzV086zFYXSHXz5mzKMb4iywJjESmv1T0x8uo0QS~zr0v7J0URWzD3qaGTkeBbf7g__" alt="">
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/494a/ceb1/aceba44ebb5e54c2e7dd0e011730861d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=I8tkc6fVmN5WU1OooY2flHYjATL0w6Sq6ZbFyXtei3tZJJbkywhDQtcoXUUi0~Cf4Ep9QHiwcUvIdo59Ccee-uMLUFR1mUhZD60ViM6e57TqaWOS1sUpzklpXQAr8aiGTN-jVYS~iUj7vUb4C15iJie-rix-yS5eLZVq77l7jkcIuRXtNS~cVq5O8A-i-1JyqJRw9ITWl-BwdiCTJMfsNAuaAs2kGIygY6Uq-~1rAgiILByXgVNz8tEkPNvqfPo5cmHERsKA97kaW9dbURbswBXsJ7lc0O2611Je79LblZ0JW0E9GP6AE8VfDnSG8i8PhfpqC9R2vcQ79YW6Y9QFhA__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
             </div>
-            <div class="items-1">
-                <img src="https://s3-alpha-sig.figma.com/img/2f79/5eb6/d1915f15d70b1ca6466c06bfd313d6a7?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Qaaz6gx9iw1d55Dt60yIpPACs5Oy8NO~fzEs~67CGbFToBkPDQprHFql129kG6uvrHmMmbyCTAlrgPRun9g-1DYpYoCx0QU7CIS5LrJrnQ-OCjTLwE9VNTCRZFBDHRtGeJC44nI9f2K7E1unU285QUpZcWb2HpN9STD8UsuJruNYMJwl0QJfsmsRVEIG-aispG48LLLn~nfkW1T6bwQUUENJ7TCEd2ap5TdL9RAbU~5QD2u8kvB9ZjVfKaed2LjgoUrLt5EtR3p5ucatS5CID4yc9TL9joOH4mF90AtFbwJqgrmvDEqxWR5YIIw9aZxQ4tNTWfq5NMl1QF561nFCOw__" alt="">
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/3a39/f1d1/d23c65e543db966efd9955c99cf0a27a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=q10Ivc1JzKA8Zompa8MQ5XUkg8q-hiWGhJmvEgt8R1Fwn4HIgYlPgRqD~AbimBB1cXV2n4tCCjPuTPkmCIjkjM~dXLY4yd817d9DjGJDblNOxEM7Sux~CJFH8r3x7BcaY0N~hGkKy4h8xrwYKbU2Ct3u~1NjhgC9DaLr4b15f5um5hJTvJ8T8N3XlOVqQe7SVh~JbZ4AU~rcxXwPqsUvRt3hfudsqjrF6yq1PXkSRREClLjhif3p9tD7jXyTvLp3i0QRruL2eWU8e1tc34pzMg7b7e-7ud1bBK214OM8NGqgDPZzM-hKWQWJIv5ok1HlNdzIpud8F1q3wPdcso7MFA__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
+            </div>
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/2c80/6617/1ca1707228b3c5e1c8fbc46e253d9eb5?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Odl36pI5MyWaAgLW4fX0wchqHrX6VBepyUrBAPOH2PdjiMKtMhDrdVzzQg1kLA2Nbm4ytQJ~9Ka8~7vPvXhWwoKc0Qo2Ii1P-ddinX6SEAdLx2QCDqNRHRepsVYbwRywLzcF03IAe8CZzU3QEyudn39s8YFwCfzY5of4YXVJV~w6T4UJUTNUVNbhryekTFGPJZ~1EoWfXtwDRApJAYV2S3yAtASt6KtgYaS~yNNuD5zdnCn~3ZxPNNArgzNSZ06ZXuglGGFLoOBo-0GAf~a~erBEc86Q8LWbDi~sUKSbNmXajprZ9iSialecuVL7sF-M695EE1TTzCiXrXPqpoH8jQ__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
+            </div>
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/047e/ec6d/b45510f2ec87e9c790a8d79f37764698?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nKHX0YUDaK5CzW-quTEN5A5V7fO~9iq-Y2sFKKsnT9kJHBHW5Q6-XXOZ~Jnf07HKv~UOicHdzkXbhc375LDr3PcXYd3JfG~zMKnJ~qwAMPsoa4YxEXVQlc5cNyyCSrGBpUwPzJqTCw7V50o13KCJu9nvFcECLDCciCN0GrWnTRiGXzviaYU2Esd3YNywEcj1XhCVWgx-PSPil4K2M2uR-TwWoMP4euBOif9kSVRtMSrLaB0qJfLCPGsHigwJha3XjLlWGI0I3ky9298LjKWIQPBTxrVJW3oGrYSQNS0mkoSWq0FN~xPtrVHkWw6Jk4kNjpmKcPtUmGDabaMIkm-nkQ__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
+            </div>
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/d0e3/5380/9225dd85a6186a241fb74e00f38dc466?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OQcw3sxpkH9k5OXYOTNBHSLvHQ~ldsLjewgSKQ-PyREK42zCankhF9Oa247wKQftpfQ9goqxgXKUI0kbVbYT94W7QvIvKDZ1u75fw4Vjh6ZZ~4vN1RvTB~EGbmlkznDLIsxCUgVt-dLXxJz0Zy4ssgVNRqZcEOZ3R-ThfKdTPd8yuUNG7Od7Q2jqi0hOFRwJa4rPNVDIO1aqtz~2Z~JHs6Bw70ekHa8Y-3wXLnxUViKlIPqa61PE10QIaV2hx48L6cHPs4ydcZQVpZUTYc1hYdthpPNNqyl-7a7mAihUhQd17dDFq~6IntYLUvPOfTip8O-caBSRz3fLQCKM4tRcNg__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
+            </div>
+        </div>
+
+        <div class="details-1">
+            <img src="https://s3-alpha-sig.figma.com/img/64c4/5ae5/26b18942f408de7e98dfd58cb9a6e202?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=crZZ96L6OQf22e-jcTfsj6TWx4PA7ay2PPARFfVK5T4fkLdZPfc7kBG9wPpdmBlief4nCAEI92sI6DCDc1CcCLeDQf4sKROOy0zMP9R5t0Tz4EWqlhCIyOwxB7sQvHRNlS8zSw67NhedKxe90jHgjr-rWwYkFH5yfsuBRmDm0SL-HeuG92TzergF~d1JBKzJZcfIBuT7SqIR0l3I~-oPt3EAoPiSv3yiZTpb7FjedJbGcYhHz-RVGDjOYcF9dixfJmWlHhwvEg90KI6KVnaMx2d16jdpa8~zGWAAZvrOoEM~1fNaDjYuEOKEKkIGjso4K4sIYql1t0EsK20ucyZ9jw__" alt="">
+            <div class="details-1-1">
+                <div class="details-1-1-1">
+                    <p>1780</p>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="details-1-1-1">New</div>
             </div>
         </div>
     </div>

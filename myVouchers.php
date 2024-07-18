@@ -1,15 +1,25 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+
+
+$sql = "SELECT title, description, date FROM announcements";
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/delivered.css">
     <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/myVouchers.css">
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"
 />
-
     <title>Document</title>
 </head>
 <body>
@@ -33,88 +43,71 @@
 		
         </div>
     </div>
-    </nav>
+    </nav> 
 
     <div class="profile">
-        <div class="profile-img">
-            <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cyt-lGnRUaScJnGhZI8a~GT4Eia6VoLhkO-NWxR1H5p7J7~gZ4APUvIzRHYhl3MOEWPzGfMVXp1VJZVy0h6UWWJtZZ~9M1KYqHVeIdgT9MgvRj6KTSd~w94dyxedLmbbl3GQjnc0NFnT9TJFFsH~DQKfzmKMAxyRwDDFO4Rhn5DrYkwuhjfiUz5rfWnfwFDR~6Y8ysWhJondatm3caVy5nutFhAxBKiV9VDQ1sH7plOVizKp8Uz8bZ07vsPIuXdYUIiLS0jRBr9IlDPUh1uekxZARXRAORk0y3gv4et3Fi3F31l-BzFPy9y7t5wI9dIh11wKbnlW3zsDrTvwPcMr0g__" alt="">
-        </div>
-        <div class="profile-details">
+        <div class="profile-1">
+            <h2>Vouchers</h2>
             <div class="announcement">
-                <h3>To Recieve</h3>
-                <p>Track Your Order</p>
+                <div class="announcement-1">
+                    <div class="heart">
+                        <i class="ri-verified-badge-fill"></i>
+                        <i class="ri-heart-fill"></i>
+                    </div>
+                </div>
+                <div class="announcement-2">
+                    <h4>Announcements</h4>
+                <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<p>" . $row["description"] . "</p>";
+            }
+        } else {
+            echo "No announcements found.";
+        }
+        $conn->close();
+        ?>
+                </div>
             </div>
         </div>
     </div>
-    
-        <div class="line">
-            <div class="line-1"></div>
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
 
-            <div class="tracking">
-                <h4>Tracking Number</h4>
-                <p>LGS-i92927839300763731</p>
-                <i class="ri-checkbox-indeterminate-line"></i>
-            </div>
+
+    <div class="my-orders-0">
+        <div class="my-orders">
+            <div class="btn"><button>Active Rewards</button></div>
+            <div class="btn"><button>Progress</button></div>
         </div>
-        <div class="details">
-            <div class="details-1">
-                <div class="details-1-1">
-                    <h4> Packed</h4>
-                    <p>Your parcel is packed and will be handed over to our delivery partner.</p>
-                </div>
-                <div class="details-1-2">
-                    <p>April,19 12.31</p>
-                </div>
+    </div>
+
+    <div class="voucher">
+        <div class="voucher-1">
+            <div class="voucher-1-0"><div class="voucher-1-1"><p>Valid Until 5.16.20</p></div></div>
+            <hr>
+            <h2>Voucher</h2>
+            <div class="v-d">
+                <h3><i class="ri-shopping-bag-fill"></i>First Purchase</h3>
+                <p>5% off for your next order</p>
             </div>
-            <div class="details-2">
-                <div class="details-1-1">
-                    <h4> On the Way to Logistic Facility</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-                </div>
-                <div class="details-1-2">
-                    <p>April,19 12.31</p>
-                </div>
-            </div>
-            <div class="details-3">
-                <div class="details-1-1">
-                    <h4> Arrived at Logistic Facility</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-                </div>
-                <div class="details-1-2">
-                    <p>April,19 12.31</p>
-                </div>
-            </div>
-            <div class="details-4">
-                <div class="details-1-1">
-                    <h4> Shipped</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-                </div>
-                <div class="details-1-2">
-                    <p>April,19 12.31</p>
-                </div>
-            </div>
-            <div class="details-5">
-                <div class="details-1-1">
-                    <h4> Out for Delivery</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-                </div>
-                <div class="details-1-2">
-                    <p>April,19 12.31</p>
-                </div>
-            </div>
-            <div class="details-6">
-                <div class="details-1-1">
-                    <h4> Delivered <i class="ri-verified-badge-fill"></i></h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
-                </div>
-                <div class="details-1-2">
-                    <p>April,19 12.31</p>
-                </div>
-            </div>
+            <button>Collected</button>
+            <div class="cr"></div>
+            <div class="cl"></div>
         </div>
+
+        <div class="voucher-1">
+            <div class="voucher-1-0"><div class="voucher-1-1"><p>Valid Until 5.16.20</p></div></div>
+            <hr>
+            <h2>Voucher</h2>
+            <div class="v-d">
+                <h3><i class="ri-shopping-bag-fill"></i>First Purchase</h3>
+                <p>5% off for your next order</p>
+            </div>
+            <button>Collected</button>
+            <div class="cr"></div>
+            <div class="cl"></div>
+        </div>
+
         
+    </div>
 </body>
 </html>

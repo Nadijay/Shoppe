@@ -1,10 +1,17 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/cartEmptyShownFromWishlist.css">
     <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/profileVoucherReminder.css">
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"
@@ -34,185 +41,74 @@
     </div>
     </nav>
 
-    <div class="cart">
-        <div class="cart-1">
-            <div class="cart-1-1">
-                <h2>Cart</h2>
-                <div class="count"><p>0</p></div>
-            </div>
-            <div class="cart-1-2">
-                <div class="cart-1-2-1">
-                    <h3>Shipping Address</h3>
-                <p>26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city</p>
-                <div class="icon"><i class="ri-pencil-fill"></i></div>
+    <div class="profile">
+        <div class="profile-1">
+            <h2>Hello, Romina!</h2>
+            <div class="announcement">
+                <div class="announcement-1">
+                    <div class="heart">
+                        <i class="ri-verified-badge-fill"></i>
+                        <i class="ri-heart-fill"></i>
+                    </div>
+                </div>
+                <div class="announcement-2">
+                    <h4>Announcement</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit luctus libero ac vulputate.</p>
                 </div>
             </div>
-        </div>
-        <div class="cart-2">
-            <h3>Total $0,00</h3>
-            <div class="chout">Checkout</div>
         </div>
     </div>
 
-    <div class="shp-icon">
-        <i class="ri-shopping-bag-fill"></i>
-    </div>
+    <div class="recently-viewed">
+        <h3>recently viewed</h3>
+        <div class="recently-viewed-items">
+            <div class="item">
+                <img src="https://s3-alpha-sig.figma.com/img/0a41/92cd/dfc715a39d328d71969353242251248e?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YRlptMZQ288qKxPmdVSmt-jxYClTtIhJxsFN~0IiTTh0U85RlEfZDI~F90xXSv2rdiuoc2xrJl5x8a5SEIJ-muM9tuLkbmLPRpNnTpdh-4eZK6ZpC0z2em3oizaDsIUYp4sddSthFdOpWdFEGSiVcnK~1QwHeGkvrjfYlW03RGgQ6NLr5xeRM6GRcX2vwMA1JM6mbnuDZtYO0liQNw8QSGRET0x-HMV1bfKlBv1xyUa7WMX3x9rSQeevsFVBMNlazcHn5CRZW380maIPD3JD-p~qdbO5MjkUaIkyGuGvJFzfCdvlqhZFp~er2CgudgOuRYGUrooIyvyUTHtTywDMzA__" alt="">
+            </div>
 
-    <div class="content">
-        <h3>From Your Wishlist</h3>
-        <div class="content-1">
-            <p>See All</p>
-            <div class="arr-icon"><i class="ri-arrow-right-line"></i></div>
+            <div class="item">
+                <img src="https://s3-alpha-sig.figma.com/img/1839/4337/441be8ec93bb43d7fd373d79c6adeeec?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OKKITrSjLnqDoMU8Qs8X9BUBvTm2Qg~82qVe4dgAHgEeivcf~x~qeisRlDPFsJf0qCxnzH7Rgf13addGpGJWLTwPAOwN~ZhMSWXhaiXjgKahPdNi89ENFUIZKzHAAHo4DwDfS0U3CVX5~Yq~Q2h2iybMDqki~cA9AbLG7jWcdakD8Q4CAC-0KyufIotRSoNrsMeLzOgnlWxpGNJeDyD1PXOFqRhK6abRU8L3Bi4YjEz0GjI~KpqJQRQlSqsLXyRLMvhgCaSKwWRvAALzXGKc4x6cMI3rjfh36p3jTM6m5irJF5gUGhBBt3rinK1JETMn6OCjOLTKmubrwhtQAfWDSg__" alt="">
+            </div>
+
+            <div class="item">
+                <img src="https://s3-alpha-sig.figma.com/img/a59f/a349/ac198655fc26bb826bb389c550d33d9f?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XZMT-7AwztpdkBESus-L1SPPOGf3YTs-XLj37brbboTUOdZLpbRBWt89FWgScLQy3G125LUdCAYtbdU317suuE60jD1SYzZQ~mVcp37W4GA47zsaggUH2mKJeaCQ-i8NLXBKMe5hlsVcTKl3u5tIk1S7Vv6NjFjsfLeaNhFJn1fhHGunSc99IU5wt94eM8gE812fr4sA0IWKJWjhyeKpA-d7e7tWMbbunvpP-6KEEt6ZXh~u7QQ5FdaobQveCsiNXV-EWcoCx1NJOJ1qhAJ25SfliC1BUtao-Dw2Q~K52d1RZQIPjcyTOMz9su46w0GoW-yd2oEGuc0UjxTUJdHhIQ__" alt="">
+            </div>
+
+            <div class="item">
+                <img src="https://s3-alpha-sig.figma.com/img/a83e/a946/c62c6f134effe41537b18c9db6256a82?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=axxKb47tNUkGY6B88M3kIDydvztRZElRJhxFKxwUdv0Hf-QbHk2RcYqEHRnJwVM~Xg1A2wUTrFJk5HPS1ONmDAxyHX4PNQpOLorBSuc8sczkik6n0fGV9UZnRh0CgPcHqIuiInm5OBDaMPF5g-23nU-nC6vve5CMwlarG4vvzr8Z-sB-mLN3WxfCOZPMSHCPO2ozXUIY08vjwlS0ISMdL8XWF442MdUFqQvixFgUav3612Tne250BXCOMyYpBgluUoOqoHOtP9SKAdCmXryCLT72lBqnZrkx433~U5FeoPUsRwj49pJ3WxKEeTJ9KVfrnpFh-tVIMpBN9SXBqzInJA__" alt="">
+            </div>
+
+            <div class="item">
+                <img src="https://s3-alpha-sig.figma.com/img/2735/3930/e7d78f58d556c1e7db3b90c000655b32?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UAH~MTCywuwb-MXQ-Gy-FW~0v0PgeF8WhypACagpO~hglMf-zJyp40~pwWiws8TKCg6msdls~at6mrhyz3gqA2jczDirBSpDdELVsrMbZ-sypWyZlvx21725e3cS67wZ2Dsy3QqXalqN5VlUa9kAiBrxMZlcQkeTTPtoRhHeCMMUAiYDR8SzI0C7w7tKgmPmIdMEyrgiDSkbrQ3jyW3N19~B3M3qUJqOmPhVsMk7NhH8w8dczJ2QZBLvdZB2PvrWKTdfowk15aDQ5SWsJmPWrzKBbnn1Q~61WkVe7Ob-9QvQ55Q0CFzppHF4HUTCgIKayGdC7nhtn4-kkiPQM3-i7Q__" alt="">
+            </div>
         </div>
     </div>
 
-
-    <div class="wishlist">
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/32b2/fed3/dd6e97ca36cbcbf5ca57596f7c6547d3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=acadrY7vtyyx0GNf60LI0He4d11oB0pOzVLmuLaQAd-Onbm-tEbpi5TRJ-mhD2Tob-Q28HPkam4UXux~m-4rVvluvjXyS2qreiBPcbOc4GYeXTRnkOEV6JFwxwm4trNUKWiFb8pQUkhT6pwuJan0zT8rjdaJbOfmOBb56spcLuW5gNJO0KkDwdp33JddtPD2PhgwpwODEqqgKFg-FvJBvgIjMLbn6bHnPE0EAQOFQz-jiopVs8ES6-uzzPNacRIvFbRLVjLkoLmiOY08RCJI~ow2yNIMx4w~qsfJC6ssemZxPTBpaPWl2wfRQpKwWXiBvH3QixvUmzGmltmATnRsXQ__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-
-
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/4e98/1e1f/88e55c19ce1aa419a238dff4dd3d7ee9?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wt4k3CLfD4xMfAUOLAUR1zSTjPWTDScm3s6gym70964u~xoS9y4WhZLBrL5cW8d5KHEUSafV0NY76TWt5NCpTNXb0SbjdvIVK78~dKCL7yuyZIB7SZ0Fh~BQg-NXUYKe9XTRJfTu1JAe2BrFHp4ILfM6YeJ5GlripcfWSCLDZYdcdtkG-7CQxuQX0o8UgAQe3x9pGHlodIbFOJ5~NZfnc~S-t1wOytvObIjMRHD4nQJdOZmYl7uPwcx6JrPSVGuOWabaP9ATA9YwP64BfjsqzifmvK2XXWaRq-iRi69ARrFnT4xfnXCeFiiLgTkFqIcTWmCYtboSg0ER9DAYru-XtQ__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/3a39/f1d1/d23c65e543db966efd9955c99cf0a27a?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bZyDE2Lwd5NnyVea-yz9sIQ0k~20y-o9zU3iuqquf~~tTJRWWXcaqHc8~Sb6C4VUlK-0-r2z~m3h82fSVLcmev8ecTJaVF5PptepPAJnXg9KuolCLE2omoBrVbf9mTkrLyBhbZJSoO2Qyx0Azsn5SrCkG85Sxkjw28wyufa6o7tYS-F250cNdt1tlPuXempItBoB73kKo05lPlueMzn0YGH-Kl7cLHtGcMhK8PLZVfOTvDN~2MaWG~zH8WUpX70vDX1m4nuI1FFNRUWaVUgduGco~pkNkRSzlJOkrYkI84MiFA1aDyOxwlZW2JTJ96RGQBzqPWuRfG3-jutYjTXDgg__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/5817/78ec/a7a1c9dc2ef1cb1bd0dcccee2d93b584?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ab-VVxXJ6ZL15r33qeJ5lYt95uHi6xaadA6-DzhdsUlRJ3JtioKM0NMeK3gP9Efk6gYArG717-sIKh34QQoPh44wGGBVrLNVvsje9J381NN~EjkaesGob66C7pi2iMpMiMFXrbsiQ6IAYt1T5Zk7AF-QtMJn3NYtvojELWadGojYizaF-1sMhoLkmgCztHHYcuBnKZm3j9OP1C1wPDLAkBbhGls1c-klSHSRtfLnZM5cFLGdElME-IIgq07bF9c6AHvyCByZeQ-Sqm4fhK2OwBPUlHlmK5Y2hUrVw50~Thv3kqLdJhVTDbup30ihaqZ4SxiB3olV6yardY3KyeNK9Q__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/902c/2ed6/848fbde49066a7244b1f4197b721c175?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V521BHLzp2W7y-zvhiRf7MSgOULEHmQ6rrohuTtT3HqgSDKSsuYsxAKbP-1vcBD4QvwInDYJ9DdUm1JvWZu11QLJy-AYNIYNyokj3QPezyEqsdnhsYVYw-2SJvXOl22Id-6cCfouYBfkAj4bYaCjGwm59ua0PyicRDYwrKYXsKkhfq2DYANwvHjAYJjvOcHvDmMcIwZMf6P7C8Azb80CaIAf-YcLumfLADihobk3-TyWccjHvDKE7SW1llonSqhd2f6Bb1pqdNRTNMuQUwyPLooRBHpfRKk8EbZRw5rgbhOnuuaJ7lgOCngcoJA~B2-r1h73DG1pf7fCU~4xO8~c~w__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/337a/22ae/49b350434fc9e50a9abb7351559ff374?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Vgp5l6pvLG66Ywy6~IMOkLKDK2m7hPD1GdHJ~SM81o6tLzFx5fbsTzDQEME5StzPdMqArFdd3Tc-2Y~QhVUpATzQ3KrRQtd7y6ufbHqcJ12712MbRU86dCDO6ZuVJ3XyjqjIambtxSKTOXxiHqlH3apBVQP3ee581TYy~McCjXs4ebUeMZrE~11xspQq39d5~rBNUoUr~phaOJwEUihw3U4NEfNDPCZa~t5vtu7eVQgZwK5HK536ET5DfM1~3pJHRkmpS5i8Qd-AzV~g1Y9z8L5O-SULVEnCnXLMol8ZaCgU6vzKQoNEMzhCHXjNSAasoiqORTfdUpAVmb3Nvi5PLg__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/d0e3/5380/9225dd85a6186a241fb74e00f38dc466?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o3ZdQrBXP9rjFb6V63hv~ipkIP7AGOklcSoQfbT4dVLoJVyamulBjdRWdUpSh7NwIT9gOA~IZlxmrMsUrgb-1DW4OvmXt-rKwaEQ7rPcNH4xt5NfLsxS3jqyd6wnvS8YnAmrNCJFTV3j6Y3RA8SwHqDFmz9H1robXuXbKS8C9pn-7xKm2-6jYX5D1ha13PX24rIH6R27s~3UcnIUMQrfod5PWUpifpind9XLm8G3IlDWKpJDGBx00MwDTrHPMruhy7s8Qi~NYpozRg~XgvLydRL496ly9A3dPsKjbADFLaRmVDGd0U6AJbkucqHe3vJj5NXNVYQ8i9HbMtsvRuPeCA__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
-        </div>
-        <div class="wishlist-1">
-            <div class="list-img">
-                <img src="https://s3-alpha-sig.figma.com/img/047e/ec6d/b45510f2ec87e9c790a8d79f37764698?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m7LTXDFFSYCAig-lk8j5dsF0SUxbnoFvtOOpRxr7fWXnVMyBk0R9laZuWRchpOHNTM9IfN5sLIvmt9V9vwWt-SaFQQjko4PZJowBjU1ZAh-sVHVHmp~GKDxs7fsyzstNu6v-MMBgjrswJijDfRTPnrb8x1i9NVUHoedOwcWODfTXQqeZKcpuT7gw23tNQbGrdxtCRlqpQh~tpRvjwmXnBZhIT45DXjGkzG4t7zpP9hL13IqhenQbGWNYD~tJs34BVJ3tWfthJDEy8GHigEgaGnZ8aqK3ku2vvgMOLtkfR8k80POj8rxLC74WC79SKDvuKZSZk64RAcVpmjvdwoV6QQ__" alt="">
-                <div class="del-icon"><i class="ri-delete-bin-line"></i></div>
-            </div>
-
-            <div class="list-details">
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <h4>$27,00</h4>
-                <div class="btns">
-                    <button>Pink</button>
-                    <button>M</button>
-                </div>
-                
-            </div>
-            <i class="ri-shopping-bag-3-line"></i>
-            <i class="ri-add-circle-line"></i>
+    <div class="my-orders-0">
+        <h3>My Orders</h3>
+        <div class="my-orders">
+            <div class="btn"><button>To Pay</button></div>
+            <div class="btn"><button>To Recieve</button><div class="circle"></div></div>
+            <div class="btn"><button>To Review</button></div>
         </div>
     </div>
 
+    <div class="stories">
+        <h3>Stories</h3>
+        <div class="items">
+            <div class="items-1">
+                <img src="https://s3-alpha-sig.figma.com/img/c9d5/52f9/ae0e0e2fca6d47ea4a77c7b3c7af5929?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E~vgH42OEzqitiMHOx-R5RfHnibMTN2nnyuSr~K8pNt9yPqU38oRV-ke0C8IFu-NtnnBjK0c8eGi4FolEFPAOg4X~ytzkVjdyQgESdI-73BP56fNRZg9lqpimo06w1s78tBy7Gzq3SfZgjwWVDMmlfq0iZfYwgvpvd0eLciyV8gWo6T~EFHALxHRrq6cgEhKnHuImSpbCtRI1Vf7vK00YSNrPm3n4nL5afGLiyDIIsz2Oh6qjggj6ScMD52SEHMqCmAzUqopp1Gym4hS3U3itz79Whxj5OChB2XKblzeqf-PSjybOKa5Q2f8bGQqMfPQgV8gqXGf3GRAtyh4zid7fQ__" alt="">
+            </div>
+            <div class="items-1">
+                <img src="https://s3-alpha-sig.figma.com/img/5c20/7bb4/21788ca6b8a82c20e2532463f6fb5f6a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=plo8kdAgEy~rdqr1Hnj4Xxj9USw7oHShThE316gENfxQo0NRR4SlxI6RTSnvYNEkCmf18WORd8fJ5Jtwv5t0kunl6kQ-5ad5nYcGwKgZd6SHTrmTSkZO2d64fg9dNmlaT8ZErxb9m47oxnGn34f1wHFrmFLIoEedg8vFoNTFdO8BqOmVd6ujHyGlb4TsKuDXe0VXVflcRK5hI81P77AjTWYH2CAL8DNhScB2YdT7xLDa8AHeJTOclKu-ARDfVUFscgbys2Uq-Kc9hva7KbbR1XF~XGpW1d7udPqclsaOuhK0IGvaEJQdvjCCeieOOojRknsRqjhm-4ZR3g2ANMJooQ__" alt="">
+            </div>
+            <div class="items-1">
+                <img src="https://s3-alpha-sig.figma.com/img/0f92/7313/fd27afa27ca1eb56190ae5462a749d4d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BljeSKZ~WK7FrH-3I~9o9ercvQa6s~BWYlbmoQK1M5vEf-87Vm7hA3nkm4oBolhBhDcZtewlNsPdL1zF3ExMjIwaPVNwpDp0Q99dUvfAjunA~PRIqdARqzoKaKgHp2UYaWs~Lip07mYApq3zFXevxpPt60bUgi7TyV6rS8t0MM-IrnHyYM856NXPw~ajPWCB6twVYRMgrWI9Fe1Dfsw7Iy-T9H0SemuO4C7v5kLyi2zHncN7mFJjhukmHRJgPFk3RFJysqXranu7Lra2gRjhMIzV086zFYXSHXz5mzKMb4iywJjESmv1T0x8uo0QS~zr0v7J0URWzD3qaGTkeBbf7g__" alt="">
+            </div>
+            <div class="items-1">
+                <img src="https://s3-alpha-sig.figma.com/img/2f79/5eb6/d1915f15d70b1ca6466c06bfd313d6a7?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Qaaz6gx9iw1d55Dt60yIpPACs5Oy8NO~fzEs~67CGbFToBkPDQprHFql129kG6uvrHmMmbyCTAlrgPRun9g-1DYpYoCx0QU7CIS5LrJrnQ-OCjTLwE9VNTCRZFBDHRtGeJC44nI9f2K7E1unU285QUpZcWb2HpN9STD8UsuJruNYMJwl0QJfsmsRVEIG-aispG48LLLn~nfkW1T6bwQUUENJ7TCEd2ap5TdL9RAbU~5QD2u8kvB9ZjVfKaed2LjgoUrLt5EtR3p5ucatS5CID4yc9TL9joOH4mF90AtFbwJqgrmvDEqxWR5YIIw9aZxQ4tNTWfq5NMl1QF561nFCOw__" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

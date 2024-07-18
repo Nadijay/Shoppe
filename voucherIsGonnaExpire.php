@@ -1,3 +1,9 @@
+<?php
+include './connection/dbconnect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+//$user_id = $_SESSION['user_id'] ?? 1; // Default to 1 if not set for testing purposes
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
